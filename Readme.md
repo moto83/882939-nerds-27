@@ -1,7 +1,7 @@
 # Личный проект «Нёрдс»
 
 * Студент: [Николай Образцов](https://up.htmlacademy.ru/htmlcss/27/user/882939).
-* Наставник: `Неизвестно`.
+* Наставник: [Дмитрий Беллавин](https://htmlacademy.ru/profile/bellavin).
 
 ---
 
