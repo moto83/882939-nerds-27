@@ -5,6 +5,120 @@
     <title>HTML Academy: Нёрдс</title>
   </head>
   <body>
+    <header>
+      <a>
+        <img src="img/logo.img" width="100" height="50" alt="лого магазина готовых шаблонов нёрдс">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#">Студия</a></li>
+          <li><a href="#">Клиенты</a></li>
+          <li><a href="#">Магазин</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Корзина</a></li>
+        </ul>
+      </nav>
+      <p>
+        Магазин готовых шаблонов
+      </p>
+    </header>
+      <main>
+        <h1>Нёрдз мазагин готовых шаблонов</h1>
+        <!--Фильтр возьмём в один section-->
+        <section>
+          <h2>Фильтр</h2>
+          <p>Стоимость:</p>
+          <input type="range">
+          <p>от</p>
+          <p>до</p>
+          <input type="number">
+          <p>Сетка:</p>
+          <input type="radio">Адаптивная
+          <input type="radio">Фиксированная
+          <input type="radio">Резиновая
+          <p>Особенности:</p>
+          <input type="checkbox">Слайдер
+          <input type="checkbox">Блок преимуществ
+          <input type="checkbox">Новости
+          <input type="checkbox">Галерея
+          <input type="checkbox">Корзина
+          <button>Показать</button>
+        </section>
+    <!--Выводимое фильтром в другой section-->
+        <section>
+          <h2>Результаты поиска</h2>
+          <div>
+            <p>Сортировать:</p>
+            <ul>
+              <li><button>По цене</button></li>
+              <li><button>По типу</button></li>
+              <li><button>По названию</button></li>
+              <li><button>^</button></li>
+              <li><button>v</button></li>
+            </ul>
+          </div>          
+      <!--обернем фотографии в figure, на самом деле там целая карточка, каждая будет div-ом-->
+          <figure>
+            <a href="#">
+              <img src="sedona.img" alt="Скриншот макета SEDONA">
+            </a>
+            <a href="#">
+              <img src="sedona.img" alt="Скриншот макета PINK">
+            </a>  
+            <a href="#">
+              <img src="sedona.img" alt="Скриншот макета Barbershop BORODINSLI">
+            </a>
+            <a href="#">
+              <img src="sedona.img" alt="Скриншот макета MISHKA">
+            </a>
+          </figure>
+      <!--слайдер для пролистывания результатов, на самом деле ссылки-->
+          <div>
+            <ul>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">Следующая</a></li>
+            </ul>            
+          </div>
+        </section>
+      </main>
+    <!--Мне кажется футер начинается с карты-->
+    <footer>
+      <h2>Контактная информация</h2>
+      <a href="#">
+        <img src="map.img" alt="карта с указанием местоположения"></img>
+      </a>      
+      <div>
+        <p>
+          NЁRDS DESING STUDIO<br>
+          191186, Санкт-Петербург,<br>
+          ул. Б.Конюшенная, д. 19/8<br>
+          тел. +7 (812) 275-75-75
+        </p>
+        <button type="button">Напишите нам</button>
+        <!--кнопка открывает форму-->
+      </div>
+      <div>
+        <ul>
+          <li>
+            Вконтакте
+          </li>
+          <li>
+            Facebook
+          </li>
+          <li>
+            Instagram
+          </li>
+        </ul>
+        <p>
+          Давайте дружить, это выгодно!<br>
+          Скидка 10% для друзей из социальных сетей.
+        </p>
+      </div>
+    </footer>
 
     <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS, уровень 1</a>».</p>
 
