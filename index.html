@@ -8,22 +8,19 @@
 
 <body>
   <header>
-    <a>
+    <a href="/">
       <img src="img/nerds-logo.svg" width="160" height="65" alt="Логотип магазина готовых шаблонов нёрдс">
     </a>
     <nav class="nav">
       <ul class="nav__list">
-        <li class="nav__item nav__item-active"><a href="#">Студия</a></li>
+        <li class="nav__item nav__item--active"><a href="#">Студия</a></li>
         <li class="nav__item"><a href="#">Клиенты</a></li>
         <li class="nav__item"><a href="catalog.html">Магазин</a></li>
         <li class="nav__item"><a href="#">Контакты</a></li>
       </ul>
       <ul>
-        <li class="nav__item nav__item-cart">
-          <a href="#">
-            <img src="img/cart-icon.svg" width="15" height="15" alt="Корзина">
-            Корзина
-          </a>
+        <li class="nav__item nav__item--cart">
+          <a href="#">Корзина</a>
         </li>
       </ul>
     </nav>
@@ -93,8 +90,7 @@
       </ul>
     </section>
     <section class="statistics">
-      <h2>Наша статистика</h2>
-      <!--Заголово оставил для читалок-->
+      <h2 class="visually-hidden">Наша статистика</h2>
       <img src="img/nerds-picture.jpg" width="360" height="208" alt="Цветной логотип Нёрдс">
       <p >С 2004 года любим точность во всем:</p>
       <ul class="statistics__list">
@@ -114,7 +110,6 @@
     </section>
     <section class="clients">
       <h2 class="visually-hidden">Наши клиенты</h2>
-      <!--Как мне кажется тут будет уместнее background-image-->
       <ul class="clients__list">
         <li class="clients_item">
           <a href="https://htmlacademy.ru/intensive/htmlcss">
@@ -142,7 +137,6 @@
   <footer>
     <section class="contacts">
       <h2 class="visually-hidden">Контактная информация</h2>
-      <!--Тут не понимаю как лучше использовать картинку <img> или background-image-->
       <a href="#">
         <img src="img/2.jpg" width="1440" height="416" alt="Изображение карты"></img>
       </a>
