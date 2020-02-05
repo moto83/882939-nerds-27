@@ -13,9 +13,9 @@
     </a>
     <nav class="nav">
       <ul class="nav__list">
-        <li class="nav__item nav__item--active"><a href="#">Студия</a></li>
+        <li class="nav__item"><a href="#">Студия</a></li>
         <li class="nav__item"><a href="#">Клиенты</a></li>
-        <li class="nav__item"><a href="catalog.html">Магазин</a></li>
+        <li class="nav__item nav__item--active"><a href="catalog.html">Магазин</a></li>
         <li class="nav__item"><a href="#">Контакты</a></li>
       </ul>
       <ul>
@@ -30,35 +30,101 @@
   </header>
   <main>
     <!--Фильтр возьмём в один section-->
-    <form class="filter">
-      <h2 class="visually-hidden">Фильтр</h2>
-      <p>Стоимость:</p>
-      <input type="range">
-      <p>от</p>
-      <input type="number">
-      <p>до</p>
-      <input type="number">
-      <p>Сетка:</p>
-      <input type="radio">Адаптивная
-      <input type="radio">Фиксированная
-      <input type="radio">Резиновая
-      <p>Особенности:</p>
-      <input type="checkbox">Слайдер
-      <input type="checkbox">Блок преимуществ
-      <input type="checkbox">Новости
-      <input type="checkbox">Галерея
-      <input type="checkbox">Корзина
-      <button type="submit">Показать</button>
+    <section class="filter">
+      <form class="filter__form" method="get" action="https://echo.htmlacademy.ru">
+        <fieldset>
+          <legend>Стоимость:</legend>
+          <ul class="cost">
+            <li class="cost__item">
+              <label class="filter__text">Стоимость:
+                <input class="filter__range" type="range">
+              </label>
+            </li>
+            <li class="cost__item">
+              <label class="filter__text">от
+                <input class="filter__cost" type="number" placeholder="0">
+              </label>
+            </li>
+            <li class="cost__item">
+              <label class="filter__text">До
+                <input class="filter__cost" type="number" placeholder="15 000">
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset class="grid">
+          <legend>Сетка:</legend>
+          <ul class="grid__list">
+            <li class="grid__item">
+              <label class="filter__text">
+                <input class="filter__radio" type="radio" name="grid">Адаптивная
+              </label>
+            </li>
+            <li class="grid__item">
+              <label class="filter__text">
+                <input class="filter__radio" type="radio" name="grid">Фиксированная
+              </label>
+            </li>
+            <li class="grid__item">
+              <label class="filter__text">
+                <input class="filter__radio" type="radio" name="grid">Резиновая
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset class="specials">
+          <legend>Особенности:</legend>
+          <ul class="specials__list">
+            <li class="specials__item specials__item--checked">
+              <label class="filter__text">
+                <input class="filter__checkbox" type="checkbox" checked>Слайдер
+              </label>
+            </li>
+            <li class="specials__item specials__item">
+              <label class="filter__text">
+                <input class="filter__checkbox" type="checkbox">Блок преимуществ
+              </label>
+            </li>
+            <li class="specials__item specials__item--checked">
+              <label class="filter__text">
+                <input class="filter__checkbox" type="checkbox" checked>Новости
+              </label>
+            </li>
+            <li class="specials__item specials__item">
+              <label class="filter__text">
+                <input class="filter__checkbox" type="checkbox">Галерея
+              </label>
+            </li>
+            <li class="specials__item specials__item">
+              <label class="filter__text">
+                <input class="filter__checkbox" type="checkbox">Корзина
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <button class="filter__button" type="submit">Показать</button>
     </form>
-    <!--Выводимое фильтром в другой section-->
-    <section class="search">
+    <!--Выводимое фильтром в другой section, здесь похоже надо переделать под radiobuttons-->
+    <section class="order">
       <h2 class="visually-hidden">Дополнительная сортировка результатов поиска</h2>
-      <form>
-        <p class="search__text">Сортировать:</p>
-        <ul class="search__list">
-          <li class="search__item"><button>По цене</button></li>
-          <li class="search__item"><button>По типу</button></li>
-          <li class="search__item"><button>По названию</button></li>
+      <form class="order-form">
+        <p class="order-form__text">Сортировать:</p>
+        <ul class="order-form__list">
+          <li class="order-form__item">
+            <label class="order-form__text">
+              <input class="order-form__type" type="radio" name="order" checked>По цене
+            </label>
+          </li>
+          <li class="order-form__item">
+            <label class="order-form__text">
+              <input class="order-form__type" type="radio" name="order">По типу
+            </label>
+          </li>
+          <li class="order-form__item">
+            <label class="order-form__text">
+              <input class="order-form__type" type="radio" name="order">По названию
+            </label>
+          </li>
           <!--Дальше будут 2 svg в виде треугольников вверх и вниз, согласно https://htmlacademy.ru/blog/video/shorts/short-4 буду вставлять через objext, чтобы потом менять цвет svg а не сам svg-->
           <li class="search__item">
             <button>
@@ -76,13 +142,14 @@
           </li>
         </ul>
       </form>
+    </section>
       <!--для отображения browser.png убрал alt, т.к. он не требуется, теперь думаю, что для картинок alt тоже можно скрыть, т.к. ниже идёт описание-->
       <!--добавил figure для каждой карточки всунул туда же кнопку-->
       <section class="search-results">
         <h2 class="visually-hidden">Результаты поиска</h2>
         <ul class="search-results__list">
           <li class="search-results__item">
-            <figure>
+            <figure class="search-results__figure">
               <img src="img/browser.svg" width="360" height="40" alt="">
               <img src="img/img-sedona-jpg.jpg" width="360" height="576" alt=" Информационный сайт Седона">
               <figcaption>
@@ -93,7 +160,7 @@
             </figure>
           </li>
           <li class="search-results__item">
-            <figure>
+            <figure class="search-results__figure">
               <img src="img/browser.svg" width="360" height="40" alt="">
               <img src="img/img-pink-jpg.jpg" width="360" height="576" alt="Продуктовый лендинг Pink">
               <figcaption>
@@ -104,7 +171,7 @@
             </figure>
           </li>
           <li class="search-results__item">
-            <figure>
+            <figure class="search-results__figure">
               <img src="img/browser.svg" width="360" height="40" alt="">
               <img src="img/img-barbershop-jpg.jpg" width="360" height="576" alt="Сайт салона красоты для мужчин">
               <figcaption>
@@ -115,7 +182,7 @@
             <button class="search-result__btn">9 900 руб.</button>
           </li>
           <li class="search-results__item">
-            <figure>
+            <figure class="search-results__figure">
               <img src="img/browser.svg" width="360" height="40" alt="">
               <img src="img/img-mishka-jpg.jpg" width="360" height="576" alt="Интернет-магазина MISHKA">
               <figcaption>
@@ -126,7 +193,7 @@
             </figure>
           </li>
           <li class="search__results-item">
-            <figure>
+            <figure class="search-results__figure">
               <img src="img/browser.svg" width="360" height="40" alt="">
               <img src="img/img-aplus-jpg.jpg" width="360" height="576" alt="Лендинг курсов повышения квалификации A Plus">
               <figcaption>
@@ -137,7 +204,7 @@
             </figure>
           </li>
           <li class="search__results-item">
-            <figure>
+            <figure class="search-results__figure">
               <img src="img/browser.svg" width="360" height="40" alt="">
               <img src="img/img-kvast-jpg.jpg" width="360" height="576"
               alt="Промо-сайт производителя крафтового кваса КВАСТ">
@@ -161,43 +228,65 @@
       </div>
     </section>
   </main>
-  <!--Мне кажется футер начинается с карты-->
   <footer>
     <section class="contacts">
       <h2 class="visually-hidden">Контактная информация</h2>
-      <!--Тут не понимаю как лучше использовать картинку <img> или background-image-->
       <a href="#">
         <img src="img/2.jpg" width="1440" height="416" alt="Изображение карты"></img>
       </a>
       <a href="#">
         <img src="img/map-marker-png.png" width="231" height="190" alt="Пин на карте с логотипом Нёрдс">
       </a>
-      <p>
+      <p class="contacts__text">
         NЁRDS DESING STUDIO<br>
         191186, Санкт-Петербург,<br>
         ул. Б.Конюшенная, д. 19/8<br>
         тел. +7 (812) 275-75-75
       </p>
-      <button class="calltoaction" type="button">Напишите нам</button>
+      <button class="contacts__button--red" type="button">Напишите нам</button>
       <!--кнопка открывает форму-->
     </section>
     <section class="social">
       <h2 class="visually-hidden">Соцсети</h2>
       <ul class="social__list">
-        <li class="social__item social__item-vk">
-          <a href="vk.com/nerdz"></a>
+        <li class="social__item">
+          <a href="vk.com/nerdz">
+            <img src="img/vk-icon.svg" width="26" height="15" alt="Вконтакте">
+          </a>
         </li>
-        <li class="social__item social__item-fb">
-          <a href="fb.com/nerdz"></a>
+        <li class="social__item">
+          <a href="fb.com/nerdz">
+            <img src="img/fb-icon.svg" width="12" height="22" alt="Facebook">
+          </a>
         </li>
-        <li class="social__item social__item-insta">
-          <a href="instagram.com/nerdz"></a>
+        <li class="social__item">
+          <a href="instagram.com/nerdz">
+            <img src="img/insta-icon.svg" width="21" height="21" alt="Instagram">
+          </a>
         </li>
       </ul>
-      <h3>Давайте дружить, это выгодно!</h3>
-      <p>Скидка 10% для друзей из социальных сетей.</p>
+      <p class="social__title">Давайте дружить, это выгодно!</p>
+      <p class="social__text">Скидка 10% для друзей из социальных сетей.</p>
     </section>
   </footer>
+  <section class="modal modal__feedback">
+    <h2 class="modal__title">Напишите нам</h2>
+    <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
+      <label class="feedback__title">Ваше имя:
+        <input type="text" name="name" placeholder="Имя Фамилия">
+      </label>
+      <label class="feedback__title">Ваш e-mail:
+        <input type="text" name="email" placeholder="email@example.com">
+      </label>
+      <label class="feedback__title">Текст письма:</label>
+      <textarea class="feedback__text" name="сomment" rows="4">
+        В свободной форме
+      </textarea>
+      <button class="button" type="submit">Отправить</button>
+    </form>
+    <button class="modal__close" type="button">Закрыть</button>
+    <!--в виде крестика-->
+  </section>
 </body>
 
 </html>
