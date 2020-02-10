@@ -4,60 +4,60 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Нёрдс</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-  <header>
-    <a href="/">
-      <img src="img/nerds-logo.svg" width="160" height="65" alt="Логотип магазина готовых шаблонов нёрдс">
-    </a>
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item"><a href="#">Студия</a></li>
-        <li class="nav__item"><a href="#">Клиенты</a></li>
-        <li class="nav__item nav__item--active"><a href="catalog.html">Магазин</a></li>
-        <li class="nav__item"><a href="#">Контакты</a></li>
+<body class="inner-page">
+  <header class="main-header">
+    <nav class="main-nav">
+      <a class="main-header__logo" href="/">
+        <img src="img/nerds-logo.svg" width="160" height="65" alt="Логотип магазина готовых шаблонов нёрдс">
+      </a>
+      <ul class="main-nav__list">
+        <li class="main-nav__item nav__item--active"><a href="/">Студия</a></li>
+        <li class="main-nav__item"><a href="#">Клиенты</a></li>
+        <li class="main-nav__item nav__item--active"><a href="#">Магазин</a></li>
+        <li class="main-nav__item"><a href="#">Контакты</a></li>
       </ul>
-      <ul>
-        <li class="nav__item nav__item--cart">
-          <a href="#">Корзина</a>
+      <ul class="main-nav-cart__list">
+        <li class="main-nav-cart__item">
+          <img  src="img/basket-icon.svg">
+          <a class="main-nav-item" href="#">Корзина</a>
         </li>
       </ul>
     </nav>
-    <h1>
-      Магазин готовых шаблонов
-    </h1>
+    <h1>Магазин готовых шаблонов</h1>
   </header>
   <main>
     <!--Фильтр возьмём в один section-->
     <section class="filter">
       <form class="filter__form" method="get" action="https://echo.htmlacademy.ru">
         <fieldset>
-          <legend>Стоимость:</legend>
+          <legend class="legend__title">Стоимость:</legend>
           <ul class="cost">
-            <li class="cost__item">
-              <label class="filter__text">Стоимость:
-                <input class="filter__range" type="range">
-              </label>
+            <li>
+              <!--для кастомного фильтра цены-->
             </li>
             <li class="cost__item">
               <label class="filter__text">от
-                <input class="filter__cost" type="number" placeholder="0">
+                <input class="filter__cost" type="number" placeholder="0" name="cost-range">
               </label>
             </li>
             <li class="cost__item">
-              <label class="filter__text">До
-                <input class="filter__cost" type="number" placeholder="15 000">
+              <label class="filter__text">до
+                <input class="filter__cost" type="number" placeholder="15 000" name="cost-range">
               </label>
             </li>
           </ul>
         </fieldset>
         <fieldset class="grid">
-          <legend>Сетка:</legend>
+          <legend class="legend__title legend__title--0spacing">Сетка:</legend>
           <ul class="grid__list">
             <li class="grid__item">
               <label class="filter__text">
-                <input class="filter__radio" type="radio" name="grid">Адаптивная
+                <input class="filter__radio" type="radio" name="grid" checked>Адаптивная
               </label>
             </li>
             <li class="grid__item">
@@ -73,36 +73,36 @@
           </ul>
         </fieldset>
         <fieldset class="specials">
-          <legend>Особенности:</legend>
+          <legend class="legend__title legend__title--0spacing">Особенности:</legend>
           <ul class="specials__list">
-            <li class="specials__item specials__item--checked">
+            <li class="specials__item">
               <label class="filter__text">
-                <input class="filter__checkbox" type="checkbox" checked>Слайдер
+                <input class="filter__checkbox" type="checkbox" name="specials-check" checked>Слайдер
               </label>
             </li>
-            <li class="specials__item specials__item">
+            <li class="specials__item">
               <label class="filter__text">
-                <input class="filter__checkbox" type="checkbox">Блок преимуществ
+                <input class="filter__checkbox" type="checkbox" name="specials-check">Блок преимуществ
               </label>
             </li>
-            <li class="specials__item specials__item--checked">
+            <li class="specials__item">
               <label class="filter__text">
-                <input class="filter__checkbox" type="checkbox" checked>Новости
+                <input class="filter__checkbox" type="checkbox" name="specials-check" checked>Новости
               </label>
             </li>
-            <li class="specials__item specials__item">
+            <li class="specials__item">
               <label class="filter__text">
-                <input class="filter__checkbox" type="checkbox">Галерея
+                <input class="filter__checkbox" type="checkbox" name="specials-check">Галерея
               </label>
             </li>
-            <li class="specials__item specials__item">
+            <li class="specials__item">
               <label class="filter__text">
-                <input class="filter__checkbox" type="checkbox">Корзина
+                <input class="filter__checkbox" type="checkbox" name="specials-check">Корзина
               </label>
             </li>
           </ul>
         </fieldset>
-        <button class="filter__button" type="submit">Показать</button>
+        <button class="filter__button" type="submit" name="filter-button">Показать</button>
     </form>
     <!--Выводимое фильтром в другой section, здесь похоже надо переделать под radiobuttons-->
     <section class="order">
@@ -110,7 +110,7 @@
       <form class="order-form">
         <p class="order-form__text">Сортировать:</p>
         <ul class="order-form__list">
-          <li class="order-form__item">
+          <li class="order-form__item order-form__item--active">
             <label class="order-form__text">
               <input class="order-form__type" type="radio" name="order" checked>По цене
             </label>
@@ -149,8 +149,8 @@
         <h2 class="visually-hidden">Результаты поиска</h2>
         <ul class="search-results__list">
           <li class="search-results__item">
-            <figure class="search-results__figure">
-              <img src="img/browser.svg" width="360" height="40" alt="">
+            <figure class="search-results__item ">
+              <img class="img-site-header" src="img/browser.svg" width="360" height="40" alt="">
               <img src="img/img-sedona-jpg.jpg" width="360" height="576" alt=" Информационный сайт Седона">
               <figcaption>
                 <h3>Sedona</h3>
@@ -161,7 +161,7 @@
           </li>
           <li class="search-results__item">
             <figure class="search-results__figure">
-              <img src="img/browser.svg" width="360" height="40" alt="">
+              <img class="mini-header" src="img/browser.svg" width="360" height="40" alt="">
               <img src="img/img-pink-jpg.jpg" width="360" height="576" alt="Продуктовый лендинг Pink">
               <figcaption>
                 <h3>Pink App</h3>
@@ -192,7 +192,7 @@
               <button class="search-result__btn">9 900 руб.</button>
             </figure>
           </li>
-          <li class="search__results-item">
+          <li class="search-results__item">
             <figure class="search-results__figure">
               <img src="img/browser.svg" width="360" height="40" alt="">
               <img src="img/img-aplus-jpg.jpg" width="360" height="576" alt="Лендинг курсов повышения квалификации A Plus">
@@ -200,10 +200,10 @@
                 <h3>A Plus</h3>
                 <p>Лендинг курсов повышения квалификации</p>
               </figcaption>
-              <button class="search__result-btn">9 900 руб.</button>
+              <button class="search-result__btn">9 900 руб.</button>
             </figure>
           </li>
-          <li class="search__results-item">
+          <li class="search-results__item">
             <figure class="search-results__figure">
               <img src="img/browser.svg" width="360" height="40" alt="">
               <img src="img/img-kvast-jpg.jpg" width="360" height="576"
@@ -212,9 +212,9 @@
                 <h3>КВАСТ</h3>
                 <p>Промо-сайт производителя крафтового кваса</p>
               </figcaption>
-              <button class="search__result-btn">9 900 руб.</button>
+              <button class="search-result__btn">9 900 руб.</button>
             </figure>
-          </li class="search__results-item">
+          </li>
         </ul>
       </section>
       <!--слайдер для пролистывания результатов, на самом деле ссылки-->
@@ -237,30 +237,30 @@
       <a href="#">
         <img src="img/map-marker-png.png" width="231" height="190" alt="Пин на карте с логотипом Нёрдс">
       </a>
-      <p class="contacts__text">
-        NЁRDS DESING STUDIO<br>
+      <p>
+        <span class="contacts__name">NЁRDS DESING STUDIO</span><br>
         191186, Санкт-Петербург,<br>
-        ул. Б.Конюшенная, д. 19/8<br>
+        ул. Б.Конюшенная, д. 19/8<br><br>
         тел. +7 (812) 275-75-75
       </p>
-      <button class="contacts__button--red" type="button">Напишите нам</button>
+      <button class="contacts__button slider__button" type="button">Напишите нам</button>
       <!--кнопка открывает форму-->
     </section>
     <section class="social">
       <h2 class="visually-hidden">Соцсети</h2>
       <ul class="social__list">
         <li class="social__item">
-          <a href="vk.com/nerdz">
+          <a href="#">
             <img src="img/vk-icon.svg" width="26" height="15" alt="Вконтакте">
           </a>
         </li>
         <li class="social__item">
-          <a href="fb.com/nerdz">
+          <a href="#">
             <img src="img/fb-icon.svg" width="12" height="22" alt="Facebook">
           </a>
         </li>
         <li class="social__item">
-          <a href="instagram.com/nerdz">
+          <a href="#">
             <img src="img/insta-icon.svg" width="21" height="21" alt="Instagram">
           </a>
         </li>
@@ -270,19 +270,17 @@
     </section>
   </footer>
   <section class="modal modal__feedback">
-    <h2 class="modal__title">Напишите нам</h2>
+    <h2>Напишите нам</h2>
     <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
       <label class="feedback__title">Ваше имя:
-        <input type="text" name="name" placeholder="Имя Фамилия">
+        <input class="feedback__text" type="text" name="name" placeholder="Имя Фамилия">
       </label>
       <label class="feedback__title">Ваш e-mail:
-        <input type="text" name="email" placeholder="email@example.com">
+        <input class="feedback__text" type="text" name="email" placeholder="email@example.com">
       </label>
       <label class="feedback__title">Текст письма:</label>
-      <textarea class="feedback__text" name="сomment" rows="4">
-        В свободной форме
-      </textarea>
-      <button class="button" type="submit">Отправить</button>
+      <textarea class="feedback__text" name="сomment" rows="4" placeholder="В свободной форме"></textarea>
+      <button class="button__feedback slider__button" type="submit">Отправить</button>
     </form>
     <button class="modal__close" type="button">Закрыть</button>
     <!--в виде крестика-->
