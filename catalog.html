@@ -23,7 +23,11 @@
       </ul>
       <ul class="main-nav-cart__list">
         <li class="main-nav-cart__item">
-          <img  src="img/basket-icon.svg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+            <circle fill="#A7A7A7" cx="4.5" cy="13.5" r="1.5"/>
+            <circle fill="#A7A7A7" cx="12.5" cy="13.5" r="1.5"/>
+            <path fill="#A7A7A7" d="M15 2H4.07l-.422-2H0v2h2.031l1.985 9H15V9H9.441L15 6.951z"/>
+          </svg>
           <a class="main-nav-item" href="#">Корзина</a>
         </li>
       </ul>
@@ -39,16 +43,7 @@
           <ul class="cost">
             <li>
               <!--для кастомного фильтра цены-->
-            </li>
-            <li class="cost__item">
-              <label class="filter__text">от
-                <input class="filter__cost" type="number" placeholder="0" name="cost-range">
-              </label>
-            </li>
-            <li class="cost__item">
-              <label class="filter__text">до
-                <input class="filter__cost" type="number" placeholder="15 000" name="cost-range">
-              </label>
+
             </li>
           </ul>
         </fieldset>
@@ -103,76 +98,89 @@
           </ul>
         </fieldset>
         <button class="filter__button" type="submit" name="filter-button">Показать</button>
-    </form>
-    <!--Выводимое фильтром в другой section, здесь похоже надо переделать под radiobuttons-->
-    <section class="order">
-      <h2 class="visually-hidden">Дополнительная сортировка результатов поиска</h2>
-      <form class="order-form">
-        <p class="order-form__text">Сортировать:</p>
-        <ul class="order-form__list">
-          <li class="order-form__item order-form__item--active">
-            <label class="order-form__text">
-              <input class="order-form__type" type="radio" name="order" checked>По цене
-            </label>
-          </li>
-          <li class="order-form__item">
-            <label class="order-form__text">
-              <input class="order-form__type" type="radio" name="order">По типу
-            </label>
-          </li>
-          <li class="order-form__item">
-            <label class="order-form__text">
-              <input class="order-form__type" type="radio" name="order">По названию
-            </label>
-          </li>
-          <!--Дальше будут 2 svg в виде треугольников вверх и вниз, согласно https://htmlacademy.ru/blog/video/shorts/short-4 буду вставлять через objext, чтобы потом менять цвет svg а не сам svg-->
-          <li class="search__item">
-            <button>
-              <object type="image/svg+xml" data="icon-down-dir.svg">
-                <img src="img/icon-down-dir.svg">
-              </object>
-            </button>
-          </li>
-          <li class="search__item">
-            <button>
-              <object type="image/svg+xml" data="icon-up-dir.svg">
-                <img src="img/icon-up-dir.svg">
-              </object>
-            </button>
-          </li>
-        </ul>
       </form>
-    </section>
+      <!--Выводимое фильтром в другой section, здесь похоже надо переделать под radiobuttons-->
+      <section class="order">
+        <h2 class="visually-hidden">Дополнительная сортировка результатов поиска</h2>
+        <form class="order-form">
+          <p class="order-form__text">Сортировать:</p>
+          <ul class="order-form__list">
+            <li class="order-form__item order-form__item--active">
+              <label class="order-form__text">
+                <input class="order-form__type" type="radio" name="order" checked>По цене
+              </label>
+            </li>
+            <li class="order-form__item">
+              <label class="order-form__text">
+                <input class="order-form__type" type="radio" name="order">По типу
+              </label>
+            </li>
+            <li class="order-form__item">
+              <label class="order-form__text">
+                <input class="order-form__type" type="radio" name="order">По названию
+              </label>
+            </li>
+            <!--Дальше будут 2 svg в виде треугольников вверх и вниз, согласно https://htmlacademy.ru/blog/video/shorts/short-4 буду вставлять через objext, чтобы потом менять цвет svg а не сам svg-->
+            <li class="search__item">
+              <button class="order-form__button--triangle">
+                <object type="image/svg+xml" data="icon-down-dir.svg">
+                  <img src="img/icon-down-dir.svg">
+                </object>
+              </button>
+            </li>
+            <li class="search__item">
+              <button class="order-form__button--triangle">
+                <object type="image/svg+xml" data="icon-up-dir.svg">
+                  <img src="img/icon-up-dir.svg">
+                </object>
+              </button>
+            </li>
+          </ul>
+        </form>
+      </section>
       <!--для отображения browser.png убрал alt, т.к. он не требуется, теперь думаю, что для картинок alt тоже можно скрыть, т.к. ниже идёт описание-->
       <!--добавил figure для каждой карточки всунул туда же кнопку-->
       <section class="search-results">
         <h2 class="visually-hidden">Результаты поиска</h2>
         <ul class="search-results__list">
           <li class="search-results__item">
-            <figure class="search-results__item ">
-              <img class="img-site-header" src="img/browser.svg" width="360" height="40" alt="">
-              <img src="img/img-sedona-jpg.jpg" width="360" height="576" alt=" Информационный сайт Седона">
-              <figcaption>
-                <h3>Sedona</h3>
-                <p>Информационный сайт для туристов</p>
-              </figcaption>
-              <button class="search-result__btn">9 900 руб.</button>
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
+                <path fill="#EAEAEA"
+                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+                </svg>
+              <figure class="search-results__item ">
+                <img src="img/img-sedona-jpg.jpg" width="360" height="576" alt=" Информационный сайт Седона">
+            </a>
+            <figcaption>
+              <h3>Sedona</h3>
+              <p>Информационный сайт для туристов</p>
+            </figcaption>
+            <button class="search-result__btn">9 900 руб.</button>
             </figure>
           </li>
-          <li class="search-results__item">
-            <figure class="search-results__figure">
-              <img class="mini-header" src="img/browser.svg" width="360" height="40" alt="">
-              <img src="img/img-pink-jpg.jpg" width="360" height="576" alt="Продуктовый лендинг Pink">
-              <figcaption>
-                <h3>Pink App</h3>
-                <p>Продуктовый лендинг приложения для iOS и Android</p>
-              </figcaption>
-              <button class="search-result__btn">9 900 руб.</button>
-            </figure>
+          <li>
+            <a class="search-results__item" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
+                <path fill="#EAEAEA"
+                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+                </svg>
+              <figure class="search-results__figure">
+                <img src="img/img-pink-jpg.jpg" width="360" height="576" alt="Продуктовый лендинг Pink">
+                <figcaption>
+                  <h3>Pink App</h3>
+                  <p>Продуктовый лендинг приложения для iOS и Android</p>
+                </figcaption>
+                <button class="search-result__btn">9 900 руб.</button>
+              </figure>
+            </a>
           </li>
           <li class="search-results__item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
+              <path fill="#EAEAEA"
+                d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+              </svg>
             <figure class="search-results__figure">
-              <img src="img/browser.svg" width="360" height="40" alt="">
               <img src="img/img-barbershop-jpg.jpg" width="360" height="576" alt="Сайт салона красоты для мужчин">
               <figcaption>
                 <h3>Barbershop</h3>
@@ -182,8 +190,11 @@
             <button class="search-result__btn">9 900 руб.</button>
           </li>
           <li class="search-results__item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
+              <path fill="#EAEAEA"
+                d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+              </svg>
             <figure class="search-results__figure">
-              <img src="img/browser.svg" width="360" height="40" alt="">
               <img src="img/img-mishka-jpg.jpg" width="360" height="576" alt="Интернет-магазина MISHKA">
               <figcaption>
                 <h3>MISHKA</h3>
@@ -193,9 +204,13 @@
             </figure>
           </li>
           <li class="search-results__item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
+              <path fill="#EAEAEA"
+                d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+              </svg>
             <figure class="search-results__figure">
-              <img src="img/browser.svg" width="360" height="40" alt="">
-              <img src="img/img-aplus-jpg.jpg" width="360" height="576" alt="Лендинг курсов повышения квалификации A Plus">
+              <img src="img/img-aplus-jpg.jpg" width="360" height="576"
+                alt="Лендинг курсов повышения квалификации A Plus">
               <figcaption>
                 <h3>A Plus</h3>
                 <p>Лендинг курсов повышения квалификации</p>
@@ -204,10 +219,13 @@
             </figure>
           </li>
           <li class="search-results__item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
+              <path fill="#EAEAEA"
+                d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+              </svg>
             <figure class="search-results__figure">
-              <img src="img/browser.svg" width="360" height="40" alt="">
               <img src="img/img-kvast-jpg.jpg" width="360" height="576"
-              alt="Промо-сайт производителя крафтового кваса КВАСТ">
+                alt="Промо-сайт производителя крафтового кваса КВАСТ">
               <figcaption>
                 <h3>КВАСТ</h3>
                 <p>Промо-сайт производителя крафтового кваса</p>
@@ -220,7 +238,7 @@
       <!--слайдер для пролистывания результатов, на самом деле ссылки-->
       <div class="pagination">
         <ul class="toggle__menu">
-          <li class="toggle__menu-item"><a href="#">1</a></li>
+          <li class="toggle__menu-item toggle__menu-item--active"><a href="#">1</a></li>
           <li class="toggle__menu-item"><a href="#">2</a></li>
           <li class="toggle__menu-item"><a href="#">3</a></li>
           <li class="toggle__menu-item"><a href="#">Следующая</a></li>
