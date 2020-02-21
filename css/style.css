@@ -1,3 +1,12 @@
+/*
+########   #######  ########  ##    ##
+##     ## ##     ## ##     ##  ##  ##
+##     ## ##     ## ##     ##   ####
+########  ##     ## ##     ##    ##
+##     ## ##     ## ##     ##    ##
+##     ## ##     ## ##     ##    ##
+########   #######  ########     ##
+*/
 body {
   margin: 0;
   padding: 0;
@@ -11,43 +20,139 @@ body {
   background-color: #ffffff;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/*
+   ###
+  ## ##
+ ##   ##
+##     ##
+#########
+##     ##
+##     ##
+*/
 a {
   text-decoration: none;
 }
 
+/*
+##     ## ########    ###    ########  ######## ########
+##     ## ##         ## ##   ##     ## ##       ##     ##
+##     ## ##        ##   ##  ##     ## ##       ##     ##
+######### ######   ##     ## ##     ## ######   ########
+##     ## ##       ######### ##     ## ##       ##   ##
+##     ## ##       ##     ## ##     ## ##       ##    ##
+##     ## ######## ##     ## ########  ######## ##     ##
+*/
+/*Закрашиваем шапку*/
+.main-header {
+  width: 100%;
+  min-height: 545px;
+  background: #eeeeee;
+}
+
+/* создаём флекс главного меню, внутренний отступ делам 49px,
+чтобы не гадать с боковыми отступами ставлю justify-content по центру,
+нижний добавим по необходимости после верстки слайдера*/
 .main-nav {
+  display: flex;
+  flex-wrap: wrap; /* защита от переполнения */
+  flex-direction: row;
+  justify-content: center;
+
+  min-width: 1160px;
+  padding-top: 49px;
+
   font-weight: 500;
   text-transform: uppercase;
-  background-color: #eeeeee;
   line-height: 30px;
 }
-
+/*это обёртка для меню без логотипа*/
+.main-nam__wrapper {
+  display: flex;
+  min-width: 663px;
+}
+/*ещё один контейнер для меню без логотипа,
+в нём уже делаем внутренний отступ от логотипа,
+однако это число не 202, которое можно увидеть на макете,
+откуда же берётся 138? */
+.main-nav__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/*убираем стили для списков*/
 .main-nav__list,
-.main-nav-cart__list {
+.main-nav__cart {
   list-style: none;
 }
-
+/*делаем логотив слегка серее при нажатии*/
+.main-header__logo img:active {
+  opacity: 0.3;
+}
+/*поведение ссылок на наведение, фокус, нажатие и в обычном состоянии*/
 .main-nav__list a,
-.main-nav-cart__list a {
+.main-nav__cart a {
   color: #000000;
 }
-
 .main-nav__list a:hover,
-.main-nav-cart__list a:hover,
+.main-nav__cart a:hover,
 .main-nav__list a:focus,
-.main-nav-cart__list a:focus {
+.main-nav__cart a:focus {
   color: #fb565a;
 }
-
 .main-nav__list a:active,
-.main-nav-cart__list a:active {
-  color: rgba(0, 0, 0, 0.3);
+.main-nav__cart a:active {
+  opacity: 0.3;
+}
+.main-nav__item {
+  padding: 0px;
+  margin: 0px;
 }
 
-.main-nav-cart__item img{
+.main-nav-item--active {
+  padding-bottom: 3px;
+  border-bottom: 2px solid #fb565a;
+}
+
+/*делаем пиктограмму корзины всегда светлой*/
+.main-nav__item img{
   opacity: 0.35;
+  top: 5px;
+  padding-right: 21px;
+}
+/*тут уже пошла магия*/
+.main-nav__list {
+  display: flex;
+  width: 438px;
+  justify-content: space-between;
+  padding-top: 10px;
 }
 
+/*это что вообще за отступы?*/
+.main-nav__cart {
+  display: flex;
+  margin-left: 138px;
+  padding-top: 10px;
+}
+
+/*
+ ######  ##       #### ########  ######## ########
+##    ## ##        ##  ##     ## ##       ##     ##
+##       ##        ##  ##     ## ##       ##     ##
+ ######  ##        ##  ##     ## ######   ########
+      ## ##        ##  ##     ## ##       ##   ##
+##    ## ##        ##  ##     ## ##       ##    ##
+ ######  ######## #### ########  ######## ##     ##
+*/
 .slider-gallegy {
   list-style: none;
 }
@@ -61,11 +166,10 @@ a {
 .slider__item p {
   color: #283136;
 }
+
 .slider {
   background-color: #eeeeee;
-
 }
-
 .slider__item a{
   width: 240px;
   height: 50px;
@@ -94,81 +198,128 @@ a {
 .slider-switch {
   list-style: none;
 }
-
-.cards__list {
-  list-style: none;
+/*
+   ###    ########  ##     ##    ###    ##    ## ########    ###     ######   ########
+  ## ##   ##     ## ##     ##   ## ##   ###   ##    ##      ## ##   ##    ##  ##
+ ##   ##  ##     ## ##     ##  ##   ##  ####  ##    ##     ##   ##  ##        ##
+##     ## ##     ## ##     ## ##     ## ## ## ##    ##    ##     ## ##   #### ######
+######### ##     ##  ##   ##  ######### ##  ####    ##    ######### ##    ##  ##
+##     ## ##     ##   ## ##   ##     ## ##   ###    ##    ##     ## ##    ##  ##
+##     ## ########     ###    ##     ## ##    ##    ##    ##     ##  ######   ########
+*/
+.advantage {
+  display: flex;
+  width: 100%;
 }
 
-.cards__item h3 {
+.advantage__wrapper {
+  width: 1100px;
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.advantage__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+  padding: 0px;
+}
+
+.advantage__item {
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-top: 80px;
+}
+.advantage__item:first-child{
+  padding-left: 0px;
+}
+.advantage__item h3 {
   text-transform: uppercase;
   font-size: 24px;
   line-height: 30px;
   font-weight: 700;
 }
 
-.cards__item p {
+.advantage__item p {
   font-size: 16px;
   line-height: 24px;
   color: #283136;
+  width: 250px;
 }
-
-.cards__img {
+/*закрасим фон картинок если вдруг не загрузится*/
+.advantage__img {
   background-color: #000000;
+  width: 300px;
+  height: 146px;
 }
 
-.cards__item a{
+.advantage__item a{
   background-color: #fb565a;
   border: none;
-
+  width: 160px;
+  height: 50px;
+  border-radius: 2px;
   text-align: center;
-  vertical-align: middle;
   line-height: 18px;
   color: #ffffff;
   text-transform: uppercase;
 }
 
-.cards__item a:hover,
-.cards__item a:focus {
+.advantage__item a:hover,
+.advantage__item a:focus {
   background-color: #e74246;
 }
 
-.cards__item a:active {
+.advantage__item a:active {
   box-shadow: inset 0px 3px 0 0 rgba(0, 1, 1, 0.1);
   background-color: #d7373b;
 }
 
-.cards__item:nth-of-type(2) a{
+.advantage__item:nth-of-type(2) a{
   background-color: #00ca74;
 }
 
-.cards__item:nth-of-type(2) a:hover,
-.cards__item:nth-of-type(2) a:focus{
+.advantage__item:nth-of-type(2) a:hover,
+.advantage__item:nth-of-type(2) a:focus{
   background-color: #00bc6c;
 }
 
-.cards__item:nth-of-type(2) a:active{
+.advantage__item:nth-of-type(2) a:active{
   box-shadow: inset 0px 3px 0 0 rgba(0, 1, 1, 0.1);
   background-color: #00aa62;
 
   color: rgba(255, 255, 255, 0.3);
 }
 
-.cards__item:nth-of-type(3) a {
+.advantage__item:nth-of-type(3) a {
   background-color: #efc84a;
 }
 
-.cards__item:nth-of-type(3) a:hover
-.cards__item:nth-of-type(3) a:focus {
+.advantage__item:nth-of-type(3) a:hover
+.advantage__item:nth-of-type(3) a:focus {
   background-color: #eab534;
 }
 
-.cards__item:nth-of-type(3) a:active {
+.advantage__item:nth-of-type(3) a:active {
   box-shadow: inset 0px 3px 0 0 rgba(0, 1, 1, 0.1);
   background-color: #e5a722;
-
   color: rgba(255, 255, 255, 0.3);
 }
-
+/*
+   ###    ########   #######  ##     ## ########
+  ## ##   ##     ## ##     ## ##     ##    ##
+ ##   ##  ##     ## ##     ## ##     ##    ##
+##     ## ########  ##     ## ##     ##    ##
+######### ##     ## ##     ## ##     ##    ##
+##     ## ##     ## ##     ## ##     ##    ##
+##     ## ########   #######   #######     ##
+*/
 .about h3 {
   font-size: 45px;
   line-height: 45px;
@@ -204,13 +355,29 @@ a {
   color: #283136;
   line-height: 18px;
 }
-
+/*
+########  #### ##     ## #### ########  ######## ########
+##     ##  ##  ##     ##  ##  ##     ## ##       ##     ##
+##     ##  ##  ##     ##  ##  ##     ## ##       ##     ##
+##     ##  ##  ##     ##  ##  ##     ## ######   ########
+##     ##  ##   ##   ##   ##  ##     ## ##       ##   ##
+##     ##  ##    ## ##    ##  ##     ## ##       ##    ##
+########  ####    ###    #### ########  ######## ##     ##
+*/
 .big-divider {
   width: 1160px;
   height: 2px;
   background-color: #efefef;
 }
-
+/*
+ ######  ##       #### ######## ##    ## ########  ######
+##    ## ##        ##  ##       ###   ##    ##    ##    ##
+##       ##        ##  ##       ####  ##    ##    ##
+##       ##        ##  ######   ## ## ##    ##     ######
+##       ##        ##  ##       ##  ####    ##          ##
+##    ## ##        ##  ##       ##   ###    ##    ##    ##
+ ######  ######## #### ######## ##    ##    ##     ######
+ */
 .clients__list {
   list-style: none;
 }
@@ -227,7 +394,16 @@ a {
   opacity: 0.1;
 }
 
-.contacts__name {
+/*
+ ######   #######  ##    ## ########    ###     ######  ########  ######
+##    ## ##     ## ###   ##    ##      ## ##   ##    ##    ##    ##    ##
+##       ##     ## ####  ##    ##     ##   ##  ##          ##    ##
+##       ##     ## ## ## ##    ##    ##     ## ##          ##     ######
+##       ##     ## ##  ####    ##    ######### ##          ##          ##
+##    ## ##     ## ##   ###    ##    ##     ## ##    ##    ##    ##    ##
+ ######   #######  ##    ##    ##    ##     ##  ######     ##     ######
+ */
+.contacts-info__name {
   font-weight: 700;
   font-size: 18px;
   line-height: 30px;
@@ -260,19 +436,16 @@ a {
   box-shadow: inset 0px 3px 0 0 rgba(0, 1, 1, 0.1);
   background-color: #d7373b;
 }
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-.social__list {
+/*
+ ######   #######   ######  ####    ###    ##
+##    ## ##     ## ##    ##  ##    ## ##   ##
+##       ##     ## ##        ##   ##   ##  ##
+ ######  ##     ## ##        ##  ##     ## ##
+      ## ##     ## ##        ##  ######### ##
+##    ## ##     ## ##    ##  ##  ##     ## ##
+ ######   #######   ######  #### ##     ## ########
+ */
+ .social__list {
   list-style: none;
 }
 
@@ -286,66 +459,62 @@ a {
   line-height: 22px;
   color: #444444;
 }
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+}
+
+.social__list {
+  display: flex;
+  flex-wrap: wrap; /* защита от переполнения */
+}
+.social__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 79px;
+  height: 79px;
+  background: #e1e1e1;
+  border-radius: 50%;
+}
+
+.social__texts {
+  display: flex;
+  flex-wrap: wrap; /* защита от переполнения */
+  flex-basis: 800px;
+  flex-direction: column;
+}
+/*
+########     ###     ######  ##     ##
+##     ##   ## ##   ##    ## ##     ##
+##     ##  ##   ##  ##       ##     ##
+##     ## ##     ##  ######  #########
+##     ## #########       ## ##     ##
+##     ## ##     ## ##    ## ##     ##
+########  ##     ##  ######  ##     ##
+*/
 .red-dash {
   width: 25px;
   height: 2px;
   background-color: #fb565a;
 }
 
-.modal__feedback h2 {
-  font-size: 45px;
-  line-height: 45px;
+/*
+ ######     ###    ########    ###    ##        #######   ######       ##     ## ######## ##     ## ##
+##    ##   ## ##      ##      ## ##   ##       ##     ## ##    ##      ##     ##    ##    ###   ### ##
+##        ##   ##     ##     ##   ##  ##       ##     ## ##            ##     ##    ##    #### #### ##
+##       ##     ##    ##    ##     ## ##       ##     ## ##   ####     #########    ##    ## ### ## ##
+##       #########    ##    ######### ##       ##     ## ##    ##      ##     ##    ##    ##     ## ##
+##    ## ##     ##    ##    ##     ## ##       ##     ## ##    ##  ### ##     ##    ##    ##     ## ##
+ ######  ##     ##    ##    ##     ## ########  #######   ######   ### ##     ##    ##    ##     ## ########
+  */
+
+.main-header {
+  width: 100%;
 }
-
-.feedback__title {
-  line-height: 18px;
-  font-weight: 700;
-}
-
-.feedback__text {
-  font-size: 16px;
-  line-height: 18px;
-  color: rgba(68, 68, 68, 0.5);
-  padding-left: 10px;
-  padding-right: 10px;
-
-  width: 360px;
-  height: 50px;
-  border: solid 2px #d7dcde;
-}
-
-.feedback-form input:focus,
-.feedback-form textarea:focus {
-  border-color: #000000;
-  color: #000000;
-}
-
-.feedback__text input:focus {
-  color: #000000;
-}
-
-.button__feedback{
-  background-color: #fb565a;
-  border: none;
-
-  text-align: center;
-  vertical-align: middle;
-  line-height: 18px;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-.button__feedback:hover,
-.button__feedback:focus {
-  background-color: #e74246;
-}
-
-.button__feedback:active {
-  box-shadow: inset 0px 3px 0 0 rgba(0, 1, 1, 0.1);
-  background-color: #d7373b;
-}
-
-/* Дальше стили для страницы каталога catalog.html */
 
 .main-header h1 {
   font-size: 55px;
@@ -355,6 +524,10 @@ a {
 
 .filter fieldset {
   border:none;
+}
+
+.filter__list{
+  list-style: none;
 }
 
 .legend__title {
@@ -449,8 +622,26 @@ a {
   background-color: rgba(255, 255, 255, 0);
 }
 
-/* Стили для карточки товара */
+/*
+ ######  ########    ###    ########   ######  ##     ##         ########  ########  ######  ##     ## ##       ########  ######
+##    ## ##         ## ##   ##     ## ##    ## ##     ##         ##     ## ##       ##    ## ##     ## ##          ##    ##    ##
+##       ##        ##   ##  ##     ## ##       ##     ##         ##     ## ##       ##       ##     ## ##          ##    ##
+ ######  ######   ##     ## ########  ##       ######### ####### ########  ######    ######  ##     ## ##          ##     ######
+      ## ##       ######### ##   ##   ##       ##     ##         ##   ##   ##             ## ##     ## ##          ##          ##
+##    ## ##       ##     ## ##    ##  ##    ## ##     ##         ##    ##  ##       ##    ## ##     ## ##          ##    ##    ##
+ ######  ######## ##     ## ##     ##  ######  ##     ##         ##     ## ########  ######   #######  ########    ##     ######
+  */
+.search-results__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 960px;
+}
 
+.search-results__item {
+  display: flex;
+  flex-direction: column;
+}
 .search-results__item:hover path {
   fill: #4C4C4C;
 }
@@ -494,7 +685,15 @@ a {
   background-color: #d7373b;
 }
 
-/*переключатель страниц*/
+/*
+########  #######   ######    ######   ##       ########
+   ##    ##     ## ##    ##  ##    ##  ##       ##
+   ##    ##     ## ##        ##        ##       ##
+   ##    ##     ## ##   #### ##   #### ##       ######
+   ##    ##     ## ##    ##  ##    ##  ##       ##
+   ##    ##     ## ##    ##  ##    ##  ##       ##
+   ##     #######   ######    ######   ######## ########
+   */
 
 .toggle__menu {
   list-style: none;
@@ -527,3 +726,160 @@ box-shadow: inset 0px 3px 0 0 rgba(0, 1, 1, 0.1);
 background-color: #d5d5d5;
 border: solid 0px #dbdbdb;
 }
+
+/* Классы для сетки на флексах */
+/*
+ ######      ###    ##       ##       ######## ########  ##    ##
+##    ##    ## ##   ##       ##       ##       ##     ##  ##  ##
+##         ##   ##  ##       ##       ##       ##     ##   ####
+##   #### ##     ## ##       ##       ######   ########     ##
+##    ##  ######### ##       ##       ##       ##   ##      ##
+##    ##  ##     ## ##       ##       ##       ##    ##     ##
+ ######   ##     ## ######## ######## ######## ##     ##    ##
+*/
+.slider-gallegy {
+  display: flex;
+  flex-wrap: wrap; /* защита от переполнения */
+  flex-basis: 1440px;
+  flex-direction: row;
+}
+
+.slider__item--left {
+  flex-direction: column;
+  flex-basis: 1440px;
+}
+
+.cards__list {
+  display: flex;
+  flex-basis: 1440px;
+  flex-wrap: wrap; /* защита от переполнения */
+}
+
+.about-stats {
+  display: flex;
+  flex-basis: 1440px;
+
+}
+.about {
+  flex-basis: 650px;
+  margin-right: 149px;
+
+}
+
+.stats__list {
+  display: flex;
+  flex-basis: 360px;
+  flex-wrap: wrap; /* защита от переполнения */
+}
+
+.clients__list {
+  display: flex;
+  flex-wrap: wrap; /* защита от переполнения */
+  flex-basis: 1440px;
+}
+
+.contacts-info {
+  display: flex;
+  padding-left: 50px;
+  background-color: #ffffff;
+}
+
+.contacts-info__button {
+  background-color: #fb565a;
+  border: none;
+
+  text-align: center;
+  vertical-align: middle;
+  line-height: 18px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.contacts-info__button:hover,
+.contacts-info__button:focus {
+  background-color: #e74246;
+}
+
+.contacts-info__button:active {
+  box-shadow: inset 0px 3px 0 0 rgba(0, 1, 1, 0.1);
+  background-color: #d7373b;
+}
+
+/*
+##     ##  #######  ########     ###    ##
+###   ### ##     ## ##     ##   ## ##   ##
+#### #### ##     ## ##     ##  ##   ##  ##
+## ### ## ##     ## ##     ## ##     ## ##
+##     ## ##     ## ##     ## ######### ##
+##     ## ##     ## ##     ## ##     ## ##
+##     ##  #######  ########  ##     ## ########
+*/
+.modal--feedback h2 {
+  font-size: 45px;
+  line-height: 45px;
+  color: #000000;
+}
+
+.feedback-form__title {
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.feedback-form__text {
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(68, 68, 68, 0.5);
+  padding-left: 10px;
+  padding-right: 10px;
+
+  width: 360px;
+  height: 50px;
+  border: solid 2px #d7dcde;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  border-color: #000000;
+  color: #000000;
+}
+
+.feedback-form__text input:focus {
+  color: #000000;
+}
+
+.feedback-form__buttom{
+  background-color: #fb565a;
+  border: none;
+
+  text-align: center;
+  vertical-align: middle;
+  line-height: 18px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.feedback-form__buttom:hover,
+.feedback-form__buttom:focus {
+  background-color: #e74246;
+}
+
+.feedback-form__buttom:active {
+  box-shadow: inset 0px 3px 0 0 rgba(0, 1, 1, 0.1);
+  background-color: #d7373b;
+}
+
+.modal .feedback-form{
+  flex-basis: 960px;
+  display: flex;
+  flex-direction: row;
+}
+
+.feedback-form label {
+  padding-left: 100px;
+  max-width: 360px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+}
+
