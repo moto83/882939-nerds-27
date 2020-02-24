@@ -10,33 +10,27 @@
 </head>
 
 <body class="inner-page">
-  <header class="main-header">
-    <nav class="main-nav">
-      <a class="main-header__logo" href="/">
-        <img src="img/nerds-logo.svg" width="160" height="65" alt="Логотип магазина готовых шаблонов нёрдс">
-      </a>
-      <div class="main-nav__wrapper">
-        <div class="main-nav__container">
-          <ul class="main-nav__list">
-            <li class="main-nav__item"><a href="/">Студия</a></li>
-            <li class="main-nav__item"><a href="#">Клиенты</a></li>
-            <li class="main-nav__item main-nav-item--active"><a href="/catalog.html">Магазин</a></li>
-            <li class="main-nav__item"><a href="#">Контакты</a></li>
+    <!-- погнали сетку на флексах-->
+    <header class="header">
+      <div class="header__wrapper container">
+        <a class="logo" href="index.html">
+          <img src="img/nerds-logo.svg" width="160" height="65" alt="Логотип магазина готовых шаблонов нёрдс">
+        </a>
+        <nav class="navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item"><a href="#">Студия</a></li>
+            <li class="navigation__item"><a href="#">Клиенты</a></li>
+            <li class="navigation__item navigation__item--active"><a href="catalog.html">Магазин</a></li>
+            <li class="navigation__item"><a href="#">Контакты</a></li>
           </ul>
-          <ul class="main-nav__cart">
-            <li class="main-nav__item">
-              <img src="img/basket-icon.svg" alt="Пиктограмма корзины">
-              <a class="main-nav-item" href="#">Корзина</a>
-            </li>
-          </ul>
-        </div>
+          <a class="cart" href="#">Корзина</a>
+        </nav>
       </div>
-    </nav>
     <h1>Магазин готовых шаблонов</h1>
   </header>
   <main>
     <!--Фильтр возьмём в один section-->
-    <section class="filter">
+    <section class="filter container">
       <form class="filter__form" method="get" action="https://echo.htmlacademy.ru">
         <fieldset>
           <legend class="legend__title">Стоимость:</legend>
@@ -100,6 +94,7 @@
         <button class="filter__button" type="submit" name="filter-button">Показать</button>
       </form>
       <!--Выводимое фильтром в другой section, здесь похоже надо переделать под radiobuttons-->
+      <!-- пока спрячу дополнительный фильтр
       <section class="order">
         <h2 class="visually-hidden">Дополнительная сортировка результатов поиска</h2>
         <form class="order-form">
@@ -120,7 +115,6 @@
                 <input class="order-form__type" type="radio" name="order">По названию
               </label>
             </li>
-            <!--Дальше будут 2 svg в виде треугольников вверх и вниз, согласно https://htmlacademy.ru/blog/video/shorts/short-4 буду вставлять через objext, чтобы потом менять цвет svg а не сам svg-->
             <li class="search__item">
               <button class="order-form__button--triangle">
                 <object type="image/svg+xml" data="icon-down-dir.svg">
@@ -137,104 +131,126 @@
             </li>
           </ul>
         </form>
-      </section>
+      </section> !-->
       <!--для отображения browser.png убрал alt, т.к. он не требуется, теперь думаю, что для картинок alt тоже можно скрыть, т.к. ниже идёт описание-->
       <!--добавил figure для каждой карточки всунул туда же кнопку-->
-      <section class="search-results">
+      <section class="search-results container">
         <h2 class="visually-hidden">Результаты поиска</h2>
         <ul class="search-results__list">
           <li class="search-results__item">
             <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
+              <svg class="search-result__header xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
                 <path fill="#EAEAEA"
                   d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
-                </svg>
-              <figure class="search-results__item ">
+              </svg>
+              <figure class="search-results__figure">
                 <img src="img/img-sedona-jpg.jpg" width="360" height="576" alt=" Информационный сайт Седона">
+                <div class="search-results__figure--hover">
+                  <figcaption>
+                    <h3>Sedona</h3>
+                    <p>Информационный сайт для туристов</p>
+                  </figcaption>
+                  <button class="search-result__btn">9 900 руб.</button>
+                </div>
+              </figure>
             </a>
-            <figcaption>
-              <h3>Sedona</h3>
-              <p>Информационный сайт для туристов</p>
-            </figcaption>
-            </figure>
-            <button class="search-result__btn">9 900 руб.</button>
           </li>
-          <li>
-            <a class="search-results__item" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
+          <li class="search-results__item">
+            <a href="#">
+              <svg class="search-result__header xmlns="http://www.w3.org/2000/svg" width="360" height="40">
                 <path fill="#EAEAEA"
                   d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
-                </svg>
+              </svg>
               <figure class="search-results__figure">
                 <img src="img/img-pink-jpg.jpg" width="360" height="576" alt="Продуктовый лендинг Pink">
+                <div class="search-results__figure--hover">
                 <figcaption>
-                  <h3>Pink App</h3>
-                  <p>Продуктовый лендинг приложения для iOS и Android</p>
-                </figcaption>
+                    <h3>Pink App</h3>
+                    <p>Продуктовый лендинг приложения для iOS и Android</p>
+                  </figcaption>
+                  <button class="search-result__btn">9 900 руб.</button>
+                </div>
               </figure>
-              <button class="search-result__btn">9 900 руб.</button>
             </a>
           </li>
           <li class="search-results__item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
-              <path fill="#EAEAEA"
-                d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+            <a href="#">
+              <svg class="search-result__header xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
+                <path fill="#EAEAEA"
+                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
               </svg>
-            <figure class="search-results__figure">
-              <img src="img/img-barbershop-jpg.jpg" width="360" height="576" alt="Сайт салона красоты для мужчин">
-              <figcaption>
-                <h3>Barbershop</h3>
-                <p>Сайт салона красоты. Для мужчин, да.</p>
-              </figcaption>
-            </figure>
-            <button class="search-result__btn">9 900 руб.</button>
+              <figure class="search-results__figure">
+                <img src="img/img-barbershop-jpg.jpg" width="360" height="576" alt="Сайт салона красоты для мужчин">
+                <div class="search-results__figure--hover">
+                  <figcaption>
+                    <h3>Barbershop</h3>
+                    <p>Сайт салона красоты. Для мужчин, да.</p>
+                  </figcaption>
+                  <button class="search-result__btn">9 900 руб.</button>
+                </div>
+              </figure>
+            </a>
           </li>
           <li class="search-results__item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
+            <a href="#">
+
+            <svg class="search-result__header xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
               <path fill="#EAEAEA"
                 d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
               </svg>
             <figure class="search-results__figure">
               <img src="img/img-mishka-jpg.jpg" width="360" height="576" alt="Интернет-магазина MISHKA">
-              <figcaption>
+              <div class="search-results__figure--hover">
+                <figcaption>
                 <h3>MISHKA</h3>
                 <p>Интернет-магазин вязаных игрушек</p>
               </figcaption>
+              <button class="search-result__btn">9 900 руб.</button>
+
+            </div>
+
             </figure>
-            <button class="search-result__btn">9 900 руб.</button>
+            </a>
           </li>
           <li class="search-results__item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
-              <path fill="#EAEAEA"
-                d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+            <a href="#">
+              <svg class="search-result__header xmlns=" http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
+                <path fill="#EAEAEA"
+                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
               </svg>
-            <figure class="search-results__figure">
-              <img src="img/img-aplus-jpg.jpg" width="360" height="576"
-                alt="Лендинг курсов повышения квалификации A Plus">
-              <figcaption>
-                <h3>A Plus</h3>
-                <p>Лендинг курсов повышения квалификации</p>
-              </figcaption>
-            </figure>
-            <button class="search-result__btn">9 900 руб.</button>
+              <figure class="search-results__figure">
+                <img src="img/img-aplus-jpg.jpg" width="360" height="576" alt="Лендинг курсов повышения квалификации A Plus">
+                <div class="search-results__figure--hover">
+                  <figcaption>
+                    <h3>A Plus</h3>
+                    <p>Лендинг курсов повышения квалификации</p>
+                  </figcaption>
+                  <button class="search-result__btn">9 900 руб.</button>
+                </div>
+              </figure>
+            </a>
           </li>
           <li class="search-results__item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
-              <path fill="#EAEAEA"
-                d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+            <a href="#">
+              <svg class="search-result__header xmlns=" http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40">
+                <path fill="#EAEAEA"
+                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
               </svg>
-            <figure class="search-results__figure">
-              <img src="img/img-kvast-jpg.jpg" width="360" height="576"
-                alt="Промо-сайт производителя крафтового кваса КВАСТ">
-              <figcaption>
-                <h3>КВАСТ</h3>
-                <p>Промо-сайт производителя крафтового кваса</p>
-              </figcaption>
-            </figure>
-            <button class="search-result__btn">9 900 руб.</button>
+              <figure class="search-results__figure">
+                <img src="img/img-kvast-jpg.jpg" width="360" height="576" alt="Промо-сайт производителя крафтового кваса КВАСТ">
+                <div class="search-results__figure--hover">
+                  <figcaption>
+                    <h3>КВАСТ</h3>
+                    <p>Промо-сайт производителя крафтового кваса</p>
+                  </figcaption>
+                  <button class="search-result__btn">9 900 руб.</button>
+                </div>
+              </figure>
+            </a>
           </li>
         </ul>
       </section>
+    </section>
       <!--слайдер для пролистывания результатов, на самом деле ссылки-->
       <div class="pagination">
         <ul class="toggle__menu">
@@ -244,7 +260,7 @@
           <li class="toggle__menu-item"><a href="#">Следующая</a></li>
         </ul>
       </div>
-    </section>
+
   </main>
   <footer>
     <section class="contacts">
@@ -264,27 +280,29 @@
       <button class="contacts__button slider__button" type="button">Напишите нам</button>
       <!--кнопка открывает форму-->
     </section>
-    <section class="social">
+    <section class="social container">
       <h2 class="visually-hidden">Соцсети</h2>
       <ul class="social__list">
         <li class="social__item">
           <a href="#">
-            <img src="img/vk-icon.svg" width="26" height="15" alt="Вконтакте">
+            <img src="img/vk-icon.svg" width="26" height="15" alt="Ссылка на нашу страницу во Вконтакте">
           </a>
         </li>
         <li class="social__item">
           <a href="#">
-            <img src="img/fb-icon.svg" width="12" height="22" alt="Facebook">
+            <img src="img/fb-icon.svg" width="12" height="22" alt="Ссылка на нашу страницу в Facebook">
           </a>
         </li>
         <li class="social__item">
           <a href="#">
-            <img src="img/insta-icon.svg" width="21" height="21" alt="Instagram">
+            <img src="img/insta-icon.svg" width="21" height="21" alt="Ссылка на нашу страницу в Instagram">
           </a>
         </li>
       </ul>
-      <p class="social__title">Давайте дружить, это выгодно!</p>
-      <p class="social__text">Скидка 10% для друзей из социальных сетей.</p>
+      <div class="social__texts">
+        <p class="social__title">Давайте дружить, это выгодно!</p>
+        <p class="social__text">Скидка 10% для друзей из социальных сетей.</p>
+      </div>
     </section>
   </footer>
   <section class="modal modal--feedback">

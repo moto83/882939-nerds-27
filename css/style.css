@@ -30,6 +30,22 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+/*cбрасываем стили таблицы*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-inline-start: 0; /* вот этот параметр оссобенно настораживает*/
+}
+
+/*класс для работы с флексами, главное не забыть про вот этот паддинг по бокам*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
 /*
    ###
   ## ##
@@ -52,98 +68,84 @@ a {
 ##     ## ##       ##     ## ##     ## ##       ##    ##
 ##     ## ######## ##     ## ########  ######## ##     ##
 */
-/*Закрашиваем шапку*/
-.main-header {
+
+.header {
   width: 100%;
   min-height: 545px;
   background: #eeeeee;
 }
 
-/* создаём флекс главного меню, внутренний отступ делам 49px,
-чтобы не гадать с боковыми отступами ставлю justify-content по центру,
-нижний добавим по необходимости после верстки слайдера*/
-.main-nav {
+.header__wrapper {
   display: flex;
-  flex-wrap: wrap; /* защита от переполнения */
-  flex-direction: row;
-  justify-content: center;
-
-  min-width: 1160px;
-  padding-top: 49px;
+  min-width: 1200px;
 
   font-weight: 500;
   text-transform: uppercase;
   line-height: 30px;
 }
-/*это обёртка для меню без логотипа*/
-.main-nam__wrapper {
-  display: flex;
-  min-width: 663px;
+
+.logo {
+  width: 160px;
+  height: 65px;
+  display: block;
+  padding-top: 49px;
 }
-/*ещё один контейнер для меню без логотипа,
-в нём уже делаем внутренний отступ от логотипа,
-однако это число не 202, которое можно увидеть на макете,
-откуда же берётся 138? */
-.main-nav__container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+
+.logo:active {
+  opacity: 0.3;
 }
-/*убираем стили для списков*/
-.main-nav__list,
-.main-nav__cart {
+
+.navigation {
+  display: flex;
+  padding-left: 202px;
+
+}
+
+.navigation__list {
   list-style: none;
-}
-/*делаем логотив слегка серее при нажатии*/
-.main-header__logo img:active {
-  opacity: 0.3;
-}
-/*поведение ссылок на наведение, фокус, нажатие и в обычном состоянии*/
-.main-nav__list a,
-.main-nav__cart a {
-  color: #000000;
-}
-.main-nav__list a:hover,
-.main-nav__cart a:hover,
-.main-nav__list a:focus,
-.main-nav__cart a:focus {
-  color: #fb565a;
-}
-.main-nav__list a:active,
-.main-nav__cart a:active {
-  opacity: 0.3;
-}
-.main-nav__item {
-  padding: 0px;
-  margin: 0px;
-}
 
-.main-nav-item--active {
-  padding-bottom: 3px;
-  border-bottom: 2px solid #fb565a;
-}
-
-/*делаем пиктограмму корзины всегда светлой*/
-.main-nav__item img{
-  opacity: 0.35;
-  top: 5px;
-  padding-right: 21px;
-}
-/*тут уже пошла магия*/
-.main-nav__list {
   display: flex;
   width: 438px;
   justify-content: space-between;
-  padding-top: 10px;
+  padding-top: 75px;
 }
 
-/*это что вообще за отступы?*/
-.main-nav__cart {
-  display: flex;
-  margin-left: 138px;
-  padding-top: 10px;
+.navigation__list a,
+.cart {
+  color: #000000;
 }
 
+.navigation__list a:hover,
+.cart:hover,
+.navigation__list a:focus,
+.cart:focus {
+  color: #fb565a;
+}
+
+.navigation__list a:active,
+.cart:active {
+  opacity: 0.3;
+}
+
+.navigation__item--active {
+  border-bottom: 2px solid #fb565a;
+}
+
+.cart {
+  position: relative;
+  padding-top: 75px;
+  padding-left: 286px;
+  padding
+}
+
+.cart::before {
+  content: url(../img/cart-icon.svg);
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 99px;
+  top: 78px;
+}
 /*
  ######  ##       #### ########  ######## ########
 ##    ## ##        ##  ##     ## ##       ##     ##
@@ -213,7 +215,7 @@ a {
 }
 
 .advantage__wrapper {
-  width: 1100px;
+  width: 1200px;
   display: flex;
   flex-direction: row;
   margin-left: auto;
@@ -251,6 +253,7 @@ a {
   line-height: 24px;
   color: #283136;
   width: 250px;
+  margin-block-start: -8px;
 }
 /*закрасим фон картинок если вдруг не загрузится*/
 .advantage__img {
@@ -263,12 +266,14 @@ a {
   background-color: #fb565a;
   border: none;
   width: 160px;
-  height: 50px;
+  height: 32px;
   border-radius: 2px;
   text-align: center;
   line-height: 18px;
   color: #ffffff;
   text-transform: uppercase;
+  margin-top: 16px;
+  padding-top: 18px;
 }
 
 .advantage__item a:hover,
@@ -324,18 +329,31 @@ a {
   font-size: 45px;
   line-height: 45px;
   font-weight: 500;
+  width: 650px;
+  margin-block-start: 34px;
+  margin-block-end: 34px;
 }
 
 .about p {
   color: #283136;
 }
 
-.about .list__title {
+.about__title {
   font-weight: 700;
   text-transform: uppercase;
+  margin-block-start: 40px;
+
 }
 .about__list {
+  padding-top: 19px;
   list-style: none;
+}
+.about__item::before {
+  display: inline-block;
+  content: ;
+  width: 25px;
+  height: 2px;
+  background-color: #fb565a;
 }
 
 .stats__list {
@@ -355,6 +373,42 @@ a {
   color: #283136;
   line-height: 18px;
 }
+
+.about-stats {
+  display: flex;
+  flex-basis: 1200px;
+
+}
+.about {
+  flex-basis: 650px;
+  margin-right: 149px;
+}
+
+.stats__list {
+  display: flex;
+  flex-basis: 360px;
+  flex-wrap: wrap; /* защита от переполнения убираем*/
+}
+.stats__item h4 {
+  margin-block-start: 34px;
+  margin-block-end: 36px;
+}
+
+.stats__item p {
+  width: 120px;
+  margin-block-start:0px;
+}
+
+.procent-top {
+  vertical-align: 15px;
+  font-size: 26px;
+}
+.stats h3 {
+  font-size: 16px;
+  line-height: 24px;
+  padding-top: 13px;
+  padding-left: 18px;
+}
 /*
 ########  #### ##     ## #### ########  ######## ########
 ##     ##  ##  ##     ##  ##  ##     ## ##       ##     ##
@@ -365,9 +419,11 @@ a {
 ########  ####    ###    #### ########  ######## ##     ##
 */
 .big-divider {
-  width: 1160px;
+  width: 1200px;
   height: 2px;
   background-color: #efefef;
+  margin-top: 80px;
+  margin-bottom: 40px;
 }
 /*
  ######  ##       #### ######## ##    ## ########  ######
@@ -380,17 +436,24 @@ a {
  */
 .clients__list {
   list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.clients__item {
+  padding-top: 0 120px;
+
 }
 
-.clients_item img {
+.clients__item img {
   opacity: 0.2;
 }
 
-.clients_item img:hover {
+.clients__item img:hover {
   opacity: 1;
 }
 
-.clients_item img:active {
+.clients__item img:active {
   opacity: 0.1;
 }
 
@@ -447,6 +510,9 @@ a {
  */
  .social__list {
   list-style: none;
+  display: flex;
+  min-width: 260px;
+  justify-content: space-between;
 }
 
 .social__title {
@@ -462,9 +528,7 @@ a {
 
 .social {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-content: center;
+  justify-content: space-between;
 }
 
 .social__list {
@@ -475,31 +539,27 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 2px;
   width: 79px;
   height: 79px;
   background: #e1e1e1;
   border-radius: 50%;
 }
 
+.social__title {
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+
+}
+
 .social__texts {
   display: flex;
-  flex-wrap: wrap; /* защита от переполнения */
+  flex-wrap: wrap; /* защита от переполнения и перенос второго параграфа на след. строку*/
   flex-basis: 800px;
-  flex-direction: column;
+
 }
-/*
-########     ###     ######  ##     ##
-##     ##   ## ##   ##    ## ##     ##
-##     ##  ##   ##  ##       ##     ##
-##     ## ##     ##  ######  #########
-##     ## #########       ## ##     ##
-##     ## ##     ## ##    ## ##     ##
-########  ##     ##  ######  ##     ##
-*/
-.red-dash {
-  width: 25px;
-  height: 2px;
-  background-color: #fb565a;
+.social__text {
+  margin-block-start: 10px;
 }
 
 /*
@@ -512,16 +572,34 @@ a {
  ######  ##     ##    ##    ##     ## ########  #######   ######   ### ##     ##    ##    ##     ## ########
   */
 
-.main-header {
-  width: 100%;
+.inner-page .header {
+  min-height: 355px;
 }
-
-.main-header h1 {
+header h1{
   font-size: 55px;
   line-height: 55px;
-  font-weight: 500;
+  display: flex;
+  max-height: 241px;
+  justify-content: center;
+  margin-block-start: 0px;
+  margin: 0px;
+  padding-top: 78px;
 }
 
+/*
+######## #### ##       ######## ######## ########
+##        ##  ##          ##    ##       ##     ##
+##        ##  ##          ##    ##       ##     ##
+######    ##  ##          ##    ######   ########
+##        ##  ##          ##    ##       ##   ##
+##        ##  ##          ##    ##       ##    ##
+##       #### ########    ##    ######## ##     ##
+*/
+
+.filter {
+  display: flex;
+
+}
 .filter fieldset {
   border:none;
 }
@@ -635,15 +713,58 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
   width: 960px;
+}
+
+.search-result__header {
 }
 
 .search-results__item {
   display: flex;
   flex-direction: column;
+  position: relative;
+  width: 360px;
+/*вот эти параметры хотелось бы пометить отдельно, и как-то их обнулять по умолчанию возможно*/
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.search-results__figure {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 360px;
+
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+
+}
+.search-results__item a {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  height: 616px;
+}
+.search-results__figure--hover {
+  background-color: #EFEFEF;
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  width: 360px;
+}
+
+.search-results__item:hover .search-results__figure--hover {
+  display: flex;
+  flex-direction: column;
 }
 .search-results__item:hover path {
   fill: #4C4C4C;
+
 }
 
 .search-results__list {
@@ -746,29 +867,12 @@ border: solid 0px #dbdbdb;
 
 .slider__item--left {
   flex-direction: column;
-  flex-basis: 1440px;
+  flex-basis: 1200px;
 }
 
 .cards__list {
   display: flex;
   flex-basis: 1440px;
-  flex-wrap: wrap; /* защита от переполнения */
-}
-
-.about-stats {
-  display: flex;
-  flex-basis: 1440px;
-
-}
-.about {
-  flex-basis: 650px;
-  margin-right: 149px;
-
-}
-
-.stats__list {
-  display: flex;
-  flex-basis: 360px;
   flex-wrap: wrap; /* защита от переполнения */
 }
 

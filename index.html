@@ -11,34 +11,26 @@
 
 <body>
   <!-- погнали сетку на флексах-->
-  <header class="main-header">
-    <nav class="main-nav">
-      <a class="main-header__logo" href="/">
+  <header class="header">
+    <div class="header__wrapper container">
+      <a class="logo" href="index.html">
         <img src="img/nerds-logo.svg" width="160" height="65" alt="Логотип магазина готовых шаблонов нёрдс">
       </a>
-      <div class="main-nav__wrapper">
-        <div class="main-nav__container">
-          <ul class="main-nav__list">
-            <li class="main-nav__item"><a href="/">Студия</a></li>
-            <li class="main-nav__item"><a href="#">Клиенты</a></li>
-            <li class="main-nav__item"><a href="/catalog.html">Магазин</a></li>
-            <li class="main-nav__item"><a href="#">Контакты</a></li>
-          </ul>
-          <ul class="main-nav__cart">
-            <li class="main-nav__item">
-              <img src="img/basket-icon.svg" alt="Пиктограмма корзины">
-              <a class="main-nav-item" href="#">Корзина</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+      <nav class="navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item"><a href="#">Студия</a></li>
+          <li class="navigation__item"><a href="#">Клиенты</a></li>
+          <li class="navigation__item navigation__item--active"><a href="catalog.html">Магазин</a></li>
+          <li class="navigation__item"><a href="#">Контакты</a></li>
+        </ul>
+        <a class="cart" href="#">Корзина</a>
+      </nav>
+    </div>
   </header>
   <main>
-
-    <section class="advantage">
+    <section class="advantage ">
       <h2 class="visually-hidden">Что мы предлагаем</h2>
-      <div class="advantage__wrapper">
+      <div class="advantage__wrapper container">
         <ul class="advantage__list">
           <li class="advantage__item">
             <img class="advantage__img" src="img/advantage-picture-red.jpg" width="300" height="146"
@@ -64,14 +56,15 @@
         </ul>
       </div>
     </section>
-    <section class="about-stats">
+    <div class="big-divider container"></div>
+    <section class="about-stats container">
       <section class="about">
         <h2 class="visually-hidden">О нас</h2>
-        <h3>Мы маленькая, но гордая
-          дизайн-студия из Краснодара</h3>
+        <h3>Мы&nbsp;&mdash; маленькая, но&nbsp;гордая
+          дизайн-студия из&nbsp;Краснодара</h3>
         <p>Исповедуем принципы минимализма и чистоты. Ставим математический расчёт превыше креатива.
           Работаем не покладая рук, как роботы.</p>
-        <p class="list__title">Выполняем заказы на разработку</p>
+        <p class="about__title">Выполняем заказы на разработку</p>
         <ul class="about__list">
           <li class="about__item">
             <div class="red-dash"></div> Веб-сайтов любой сложности
@@ -84,46 +77,46 @@
           </li>
         </ul>
       </section>
-      <section class="stats">
+      <section class="stats container">
         <h2 class="visually-hidden">Наша статистика</h2>
         <img src="img/nerds-picture.png" width="360" height="208" alt="Цветной логотип Нёрдс">
         <h3>С 2004 года любим точность во всем:</h3>
         <ul class="stats__list">
           <li class="stats__item">
-            <h4>146%</h4>
+            <h4>146<span class="procent-top">%</span></h4>
             <p>Уровень cамоотдачи</p>
           </li>
           <li class="stats__item">
-            <h4>100%</h4>
+            <h4>100<span class="procent-top">%</span></h4>
             <p>Соблюдение сроков</p>
           </li>
           <li class="stats__item">
-            <h4>50%</h4>
+            <h4>50<span class="procent-top">%</span></h4>
             <p>Минимальная предоплата</p>
           </li>
         </ul>
       </section>
     </section>
-    <div class="big-divider"></div>
-    <section class="clients">
+    <div class="big-divider container"></div>
+    <section class="clients container">
       <h2 class="visually-hidden">Наши клиенты</h2>
-      <ul class="clients__list">
-        <li class="clients_item">
+      <ul class="clients__list container">
+        <li class="clients__item">
           <a href="https://htmlacademy.ru/intensive/htmlcss">
             <img src="img/htmlacdemy-logo.png" width="199" height="68" alt="Логотип HTML академии">
           </a>
         </li>
-        <li class="clients_item">
+        <li class="clients__item">
           <a href="#">
             <img src="img/borodinski-logo.png" width="209" height="90" alt="Логотип Барбершопа Бородинский">
           </a>
         </li>
-        <li class="clients_item">
+        <li class="clients__item">
           <a href="#">
             <img src="img/pink-logo.png" width="185" height="52" alt="Логотип компании PINK">
           </a>
         </li>
-        <li class="clients_item">
+        <li class="clients__item">
           <a href="#">
             <img src="img/mishka-logo.png" width="173" height="84" alt="Логотип компании MISHKA">
           </a>
@@ -133,10 +126,9 @@
       </ul>
     </section>
     <div class="big-divider"></div>
-
   </main>
   <footer>
-    <section class="contacts">
+    <section class="contacts container">
       <h2 class="visually-hidden">Контактная информация</h2>
       <a href="#">
         <img src="img/2.jpg" width="1440" height="416" alt="Изображение карты"></img>
@@ -155,7 +147,7 @@
       </div>
       <!--кнопка открывает форму-->
     </section>
-    <section class="social">
+    <section class="social container">
       <h2 class="visually-hidden">Соцсети</h2>
       <ul class="social__list">
         <li class="social__item">
@@ -180,7 +172,7 @@
       </div>
     </section>
   </footer>
-  <section class="modal modal--feedback">
+  <section class="modal modal--feedback container">
     <h2>Напишите нам</h2>
     <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
       <label class="feedback-form__title">Ваше имя:
