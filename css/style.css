@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
 
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', "Arial", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -157,32 +157,49 @@ a {
 */
 .slider-gallegy {
   list-style: none;
+  display: flex;
 }
 
+.slider__item {
+  display: flex;
+  max-height: 430px;
+}
 .slider__item h3 {
   font-size: 55px;
   line-height: 55px;
   font-weight: 500;
+  max-width: 515px;
 }
 
 .slider__item p {
   color: #283136;
+  max-width: 409px;
 }
 
+.slider__item img {
+  display: block;
+}
 .slider {
   background-color: #eeeeee;
 }
+
+.slider__item--left {
+  display: flex;
+  flex-direction: row;
+}
+
 .slider__item a{
-  width: 240px;
-  height: 50px;
   background-color: #fb565a;
   border: none;
-
+  width: 240px;
+  height: 50px;
+  border-radius: 2px;
   text-align: center;
-  vertical-align: middle;
   line-height: 18px;
   color: #ffffff;
   text-transform: uppercase;
+  margin-top: 16px;
+  padding-top: 18px;
 }
 
 .slider__item a:hover,
@@ -598,8 +615,114 @@ header h1{
 
 .filter {
   display: flex;
+}
+
+.filter__item {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+}
+
+
+.range-filter {
+  width: 260px;
+  margin-top: 49px;
+}
+
+.filter__item legend {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0.18px;
+
+  text-transform: uppercase;
+}
+
+
+.range-controls {
+  position: relative;
+
+  height: 41px;
+  margin-bottom: 15px;
+  padding-top: 39px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  background-color: #f1f1f1;
+
+  border-radius: 5px;
 
 }
+.range-controls .bar {
+  width: 70%;
+  height: 2px;
+
+  background: #00ca74;
+}
+.range-controls .scale {
+  height: 2px;
+
+  background: #d7dcde;
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 31px;
+  left: 0;
+
+  width: 4px;
+  height: 4px;
+  padding: 0;
+
+  border: 8px solid #ffffff;
+  background-color: #ababab;
+  box-shadow: 0 2px 1px 0 #cfcfcf;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+
+.range-controls .toggle-min {
+  left: 50px;
+}
+
+.range-controls .toggle-max {
+  left: 110px;
+}
+
+.price-controls {
+  font-size: 0;
+}
+
+.price-controls label {
+  display: inline-block;
+  width: 50%;
+
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.price-controls input {
+  width: 60px;
+  padding: 8px 10px;
+  margin-left: 10px;
+
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: #283136;
+
+  border: none;
+  border-radius: 5px;
+  background: #f1f1f1;
+}
+
+.max-price {
+  text-align: right;
+}
+
 .filter fieldset {
   border:none;
 }
@@ -608,16 +731,23 @@ header h1{
   list-style: none;
 }
 
-.legend__title {
+.filter__grid legend {
   font-weight: 700;
   font-size: 18px;
   line-height: 30px;
-  letter-spacing: 0.5px;
+
   text-transform: uppercase;
 }
-
 .legend__title--0spacing {
   letter-spacing: 0px;
+}
+
+.specials legend {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+
+  text-transform: uppercase;
 }
 
 .filter__range {
