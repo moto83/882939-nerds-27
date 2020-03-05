@@ -20,7 +20,7 @@
         <ul class="navigation__list">
           <li class="navigation__item"><a href="#">Студия</a></li>
           <li class="navigation__item"><a href="#">Клиенты</a></li>
-          <li class="navigation__item navigation__item--active"><a href="catalog.html">Магазин</a></li>
+          <li class="navigation__item"><a href="catalog.html">Магазин</a></li>
           <li class="navigation__item"><a href="#">Контакты</a></li>
         </ul>
         <a class="cart" href="#">Корзина</a>
@@ -28,19 +28,20 @@
     </div>
   </header>
   <main>
-    <section class="slider container">
+    <section class="slider ">
       <h2 class="visually-hidden">Наш подход</h2>
       <ul class="slider-gallegy container">
         <li class="slider__item">
           <div class="slider__item--left">
-            <!--ОШИБКА: пытаюсь сделать описание с кнопкой в левый вертикальный флекс, картинка пока не выстраивается справа-->
-            <h3>Долго, дорого, скрупулёзно.</h3>
+            <h3>Долго, дорого, скрупулезно.</h3>
             <p>Математически выверенный дизайн <br>для вашего сайта или мобильного приложения.</p>
             <a class="slider__button" href="#">Узнать больше</a>
           </div>
           <img src="img/slide-picture1.png" width="698" height="413" alt="Смартфоны с мокапами приложений">
         </li>
-        <li class="slider__item">
+        <!-- Тут остальные слайды слайдера-->
+        <!--
+          <li class="slider__item">
           <div class="slider__item--left">
           <h3>Любим математику как никто другой</h3>
           <p>Никакого креатива, только математические формулы для расчёта идеальных пропорций.</p>
@@ -55,22 +56,25 @@
           <a class="slider__button" href="#">Узнать больше</a>
         </div>
           <img src="img/slide-picture3.png" width="759" height="411" alt="Планшет и смартфон с мокапами приложений">
-        </li>
+        </li> -->
       </ul>
       <ul class="slider-switch">
         <li>
           <label class="slider-switch__label">
-            <input class="slider-switch__radio" type="radio" name="slider-switch"><p class="visually-hidden">первый слайд</p>
+            <input class="slider-switch__radio" type="radio" name="slider-switch" id="slide-1" checked>
+            <p class="visually-hidden">первый слайд</p>
           </label>
         </li>
         <li>
           <label class="slider-switch__label">
-            <input class="slider-switch__radio" type="radio" name="slider-switch"><p class="visually-hidden">второй слайд</p>
+            <input class="slider-switch__radio" type="radio" name="slider-switch" id="slide-2">
+            <p class="visually-hidden">второй слайд</p>
           </label>
         </li>
         <li>
           <label class="slider-switch__label">
-            <input class="slider-switch__radio" type="radio" name="slider-switch"><p class="visually-hidden">третий слайд</p>
+            <input class="slider-switch__radio" type="radio" name="slider-switch" id="slide-3">
+            <p class="visually-hidden">третий слайд</p>
           </label>
         </li>
       </ul>
@@ -90,7 +94,7 @@
             <img class="advantage__img" src="img/advantage-picture-green.jpg" width="300" height="146"
               alt="Изображение двух смартфонов">
             <h3>Приложения</h3>
-            <p>Покорите топ-10 приложений в Appstiore и Google Play</p>
+            <p>Покорите топ-10 приложений в AppStore и Google Play</p>
             <a href="#">Заказать</a>
           </li>
           <li class="advantage__item">
@@ -108,16 +112,16 @@
       <section class="about">
         <h2 class="visually-hidden">О нас</h2>
         <h3>Мы&nbsp;&mdash; маленькая, но&nbsp;гордая
-          дизайн-студия из&nbsp;Краснодара</h3>
+          дизайн-студия из&nbsp;Краснодара.</h3>
         <p>Исповедуем принципы минимализма и чистоты. Ставим математический расчёт превыше креатива.
           Работаем не покладая рук, как роботы.</p>
-        <p class="about__title">Выполняем заказы на разработку</p>
+        <p class="about__title">Выполняем заказы на разработку:</p>
         <ul class="about__list">
           <li class="about__item">
             <div class="red-dash"></div> Веб-сайтов любой сложности
           </li>
           <li class="about__item">
-            <div class="red-dash"></div>Мобильных приложений для <i>OS и Android</i>
+            <div class="red-dash"></div>Мобильных приложений для iOS и Android
           </li>
           <li class="about__item">
             <div class="red-dash"></div>Слайдшоу и видео для корпортаивных презентаций
@@ -144,53 +148,51 @@
         </ul>
       </section>
     </section>
-    <div class="big-divider container"></div>
-    <section class="clients container">
+    <div class="big-divider2 container"></div>
+    <section class="clients">
       <h2 class="visually-hidden">Наши клиенты</h2>
       <ul class="clients__list container">
-        <li class="clients__item">
+        <li class="clients__item clients__item--htmlac">
           <a href="https://htmlacademy.ru/intensive/htmlcss">
             <img src="img/htmlacdemy-logo.png" width="199" height="68" alt="Логотип HTML академии">
           </a>
         </li>
-        <li class="clients__item">
+        <li class="clients__item clients__item--borod">
           <a href="#">
             <img src="img/borodinski-logo.png" width="209" height="90" alt="Логотип Барбершопа Бородинский">
           </a>
         </li>
-        <li class="clients__item">
+        <li class="clients__item clients__item--pink">
           <a href="#">
             <img src="img/pink-logo.png" width="185" height="52" alt="Логотип компании PINK">
           </a>
         </li>
-        <li class="clients__item">
+        <li class="clients__item clients__item--mish">
           <a href="#">
             <img src="img/mishka-logo.png" width="173" height="84" alt="Логотип компании MISHKA">
           </a>
         </li>
-
-
       </ul>
     </section>
-    <div class="big-divider"></div>
   </main>
   <footer>
-    <section class="contacts container">
+    <section class="contacts">
       <h2 class="visually-hidden">Контактная информация</h2>
       <a href="#">
-        <img src="img/2.jpg" width="1440" height="416" alt="Изображение карты"></img>
+        <div class="contacts-map">
+          <img class="contacts-map__background" src="img/2.jpg" width="1440" height="416" alt="Изображение карты"></img>
+          <img class="contacts-map__pin" src="img/map-marker-png.png" width="231" height="190"
+            alt="Пин на карте с логотипом Нёрдс">
+        </div>
       </a>
-      <a href="#">
-        <img src="img/map-marker-png.png" width="231" height="190" alt="Пин на карте с логотипом Нёрдс">
-      </a>
-      <div class="contacts-info"></div>
-      <p>
-        <span class="contacts-info__name">NЁRDS DESING STUDIO</span><br>
-        191186, Санкт-Петербург,<br>
-        ул. Б.Конюшенная, д. 19/8<br><br>
-        тел. +7 (812) 275-75-75
-      </p>
-      <button class="contacts-info__button" type="button">Напишите нам</button>
+      <div class="contacts-info">
+        <p>
+          <span class="contacts-info__name">NЁRDS DESIGN STUDIO</span><br>
+          191186, Санкт-Петербург,<br>
+          ул. Б. Конюшенная, д. 19/8<br><br>
+          тел. +7 (812) 275-75-75
+        </p>
+        <button class="contacts-info__button" type="button">Напишите нам</button>
       </div>
       <!--кнопка открывает форму-->
     </section>
@@ -198,28 +200,28 @@
       <h2 class="visually-hidden">Соцсети</h2>
       <ul class="social__list">
         <li class="social__item">
-          <a href="#">
+          <a class="social__vk" href="#">
             <img src="img/vk-icon.svg" width="26" height="15" alt="Ссылка на нашу страницу во Вконтакте">
           </a>
         </li>
         <li class="social__item">
-          <a href="#">
+          <a class="social__fb" href="#">
             <img src="img/fb-icon.svg" width="12" height="22" alt="Ссылка на нашу страницу в Facebook">
           </a>
         </li>
         <li class="social__item">
-          <a href="#">
+          <a class="social__in" href="#">
             <img src="img/insta-icon.svg" width="21" height="21" alt="Ссылка на нашу страницу в Instagram">
           </a>
         </li>
       </ul>
-      <div class="social__texts">
+      <div class="social__slogan">
         <p class="social__title">Давайте дружить, это выгодно!</p>
         <p class="social__text">Скидка 10% для друзей из социальных сетей.</p>
       </div>
     </section>
   </footer>
-  <section class="modal modal--feedback container">
+  <!--   <section class="modal modal--feedback container">
     <h2>Напишите нам</h2>
     <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
       <label class="feedback-form__title">Ваше имя:
@@ -235,7 +237,7 @@
     </form>
     <button class="feedback__close" type="button">Закрыть</button>
     <!--в виде крестика-->
-  </section>
+  </section> -->
 </body>
 
 </html>
