@@ -586,6 +586,7 @@ margin-block-end:0px;
    position: relative;
    margin-top: 80px;
  }
+
  .contacts-info {
    display: flex;
    flex-direction: column;
@@ -595,6 +596,7 @@ margin-block-end:0px;
    top: 54px;
    left: 371px;
  }
+
 .contacts-info__name {
   display: flex;
   font-weight: 700;
@@ -602,6 +604,7 @@ margin-block-end:0px;
   line-height: 30px;
   text-transform: uppercase;
   color: #000000;
+
   padding-top: 48px;
   padding-bottom: 6px;
 }
@@ -616,11 +619,13 @@ margin-block-end:0px;
 .contacts-info__button {
   background-color: #fb565a;
   border: none;
+  border-radius: 2px;
   width: 219px;
   height: 50px;
+
   padding: 8px 16px;
   margin-top: 36px;
-  border-radius: 2px;
+
   text-align: center;
   vertical-align: middle;
   line-height: 18px;
@@ -637,15 +642,18 @@ margin-block-end:0px;
   box-shadow: inset 0px 3px 0 0 rgba(0, 1, 1, 0.1);
   background-color: #d7373b;
 }
+
 .contacts-map {
   position: relative;
 }
+
 .contacts-map__background {
   position: relative;
   display: flex;
   align-items: center;
   margin: 0 auto;
 }
+/* абсолютно отобразим pin на карте */
 .contacts-map .contacts-map__pin {
   position: absolute;
   top: 89px;
@@ -777,56 +785,69 @@ header h1{
 ##       #### ########    ##    ######## ##     ##
 */
 
-.filter {
+.filters {
   display: flex;
 }
 
-.filter__item {
-  margin: 0;
-  padding: 0;
-
-  border: none;
+.filters fieldset {
+  border:none;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 56px;
 }
 
+.filter {
+  margin-top: 55px;
+  width: 261px;
+}
+
+.filter ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.filter fieldset:nth-child(2) {
+  margin-bottom:27px;
+}
+.filter fieldset:last-of-type{
+  margin-bottom:32px;
+}
+
+/*Фильтр с ползунками-----------------------------------------------------------*/
+
+.cost legend {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0.18px;
+  text-transform: uppercase;
+}
 
 .range-filter {
   width: 260px;
   margin-top: 49px;
 }
 
-.filter__item legend {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 30px;
-  letter-spacing: 0.18px;
-
-  text-transform: uppercase;
-}
-
-
 .range-controls {
   position: relative;
-
   height: 41px;
   margin-bottom: 15px;
   padding-top: 39px;
   padding-right: 20px;
   padding-left: 20px;
-
   background-color: #f1f1f1;
-
   border-radius: 5px;
-
 }
+
 .range-controls .bar {
   width: 70%;
   height: 2px;
-
   background: #00ca74;
 }
+
 .range-controls .scale {
   height: 2px;
-
   background: #d7dcde;
 }
 
@@ -834,19 +855,15 @@ header h1{
   position: absolute;
   top: 31px;
   left: 0;
-
   width: 4px;
   height: 4px;
   padding: 0;
-
   border: 8px solid #ffffff;
   background-color: #ababab;
   box-shadow: 0 2px 1px 0 #cfcfcf;
   border-radius: 50%;
-
   cursor: pointer;
 }
-
 
 .range-controls .toggle-min {
   left: 50px;
@@ -872,12 +889,10 @@ header h1{
   width: 60px;
   padding: 8px 10px;
   margin-left: 10px;
-
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
   text-align: center;
   color: #283136;
-
   border: none;
   border-radius: 5px;
   background: #f1f1f1;
@@ -887,68 +902,129 @@ header h1{
   text-align: right;
 }
 
-.filter fieldset {
-  border:none;
+/*Фильтр с радиокнопками ---------------------------------------------------------*/
+
+.grid {
+  padding: 0px;
+  margin: 0px;
 }
 
-.filter__list{
-  list-style: none;
-}
-
-.filter__grid legend {
+.grid legend {
   font-weight: 700;
   font-size: 18px;
   line-height: 30px;
-
   text-transform: uppercase;
 }
-.legend__title--0spacing {
-  letter-spacing: 0px;
+
+.grid__list{
+  list-style: none;
 }
+
+.grid__item {
+  position: relative;
+  margin-top: 14px;
+  margin-bottom: 16px;
+  padding-left: 36px;
+}
+
+.grid__item .filter__text {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.grid__item label::before {
+  content: "";
+  position: absolute;
+  left: -36px;
+  top:-1px;
+  width: 18px;
+  height: 18px;
+  border: 4px solid #b9b9b9;
+  border-radius: 50%;
+}
+
+.filter__radio{
+  display: none;
+}
+
+.filter__radio:checked + label::after {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 7px;
+  width: 2px;
+  height: 2px;
+  border: 4px solid #b9b9b9;
+  background-color: #b9b9b9;
+  border-radius: 50%;
+}
+
+/*Фильтр с чекбоксами -----------------------------------------*/
 
 .specials legend {
   font-weight: 700;
   font-size: 18px;
   line-height: 30px;
-
   text-transform: uppercase;
-}
-
-.filter__range {
-  width: 261px;
-  height: 81px;
-  background-color: #eeeeee;
-}
-
-.cost {
-  list-style: none;
-}
-
-.cost .filter__text {
-  font-size: 16px;
-  line-height: 22px;
-  color: #283136;
-  text-transform: uppercase;
-}
-
-.grid__list {
-  list-style: none;
-  line-height: 40px;
 }
 
 .specials__list {
   list-style: none;
-  line-height: 40px;
 }
 
+.specials__item{
+position: relative;
+margin-top: 14px;
+margin-bottom: 16px;
+padding-left: 36px;
+}
+
+.filter__checkbox {
+  display: none;
+}
+
+.specials .filter__text {
+  position: relative;
+
+  display: block;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.specials label::before {
+  content: url(../img/checkbox-off.svg);
+  position: absolute;
+  left: -34px;
+  top: 0px;
+  width: 18px;
+  height: 18px;
+  opacity: 0.4;
+}
+
+.filter__checkbox:checked + label::before {
+  content: url(../img/checkbox-on.svg);
+  position: absolute;
+  left: -34px;
+  top: 0px;
+  width: 18px;
+  height: 18px;
+  opacity: 0.4;
+}
+
+
+/*Кнопка показать ------------------------------------------------------*/
 .filter__button {
   background-color: #eeeeee;
   border: none;
-
   font-size: 16px;
   font-weight: 500;
   text-align: center;
   vertical-align: middle;
+  width: 260px;
+  height: 50px;
   line-height: 18px;
   color: #000000;
   text-transform: uppercase;
@@ -965,6 +1041,8 @@ header h1{
 
   color: rgba(0, 0, 0, 0.3);
 }
+
+/*Фильтр для группировки результатов --------------------------*/
 
 .order-form__list {
   list-style: none;
@@ -993,7 +1071,6 @@ header h1{
   border: 0px rgba(255, 255, 255, 0);
   background-color: rgba(255, 255, 255, 0);
 }
-
 /*
  ######  ########    ###    ########   ######  ##     ##
 ##    ## ##         ## ##   ##     ## ##    ## ##     ##
@@ -1003,15 +1080,18 @@ header h1{
 ##    ## ##       ##     ## ##    ##  ##    ## ##     ##
  ######  ######## ##     ## ##     ##  ######  ##     ##
   */
-.search-results__list {
+.search-results {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  width: 960px;
 }
 
-.search-result__header {
+.search-results__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 960px;
+
 }
 
 .search-results__item {
@@ -1019,11 +1099,20 @@ header h1{
   flex-direction: column;
   position: relative;
   width: 360px;
-/*вот эти параметры хотелось бы пометить отдельно, и как-то их обнулять по умолчанию возможно*/
+/*вот эти параметры хотелось бы пометить отдельно,
+  и как-то их обнулять по умолчанию возможно*/
   margin-block-start: 0px;
   margin-block-end: 0px;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+  margin-left: 40px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 33px;
+}
+
+.search-results__item:last-child{
+  margin-bottom: 0px;
 }
 
 .search-results__figure {
@@ -1036,8 +1125,8 @@ header h1{
   margin-block-end: 0px;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-
 }
+
 .search-results__item a {
   display: flex;
   flex-direction: column;
