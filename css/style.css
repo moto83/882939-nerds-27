@@ -105,7 +105,7 @@ a {
 
 .navigation__list {
   list-style: none;
-
+  position: relative;
   display: flex;
   width: 438px;
   justify-content: space-between;
@@ -129,9 +129,17 @@ a {
   opacity: 0.3;
 }
 
-.navigation__item--active {
-  border-bottom: 2px solid #fb565a;
+.navigation__item--active::after {
+  content: "";
+  position: absolute;
+  right: 132px;
+  top: 108px;
+  width: 74px;
+  height: 2px;
+  background-color: #fb565a;
 }
+/*Регение выше отвратительное, т.к. не сработает для остальных ссылок, для каждой нужно будет сделать такое, но обычным border-bottom у меня не получилось*/
+
 
 .cart {
   position: relative;
@@ -660,6 +668,9 @@ margin-block-end:0px;
   left: 1052px;
 }
 
+.inner-page .contacts {
+  margin-top: 59px;
+}
 /*
  ######   #######   ######  ####    ###    ##
 ##    ## ##     ## ##    ##  ##    ## ##   ##
@@ -1046,6 +1057,14 @@ padding-left: 36px;
 
 .order-form__list {
   list-style: none;
+  display: flex;
+}
+.order-form {
+  display: flex;
+  width: 980px;
+  justify-content: flex-start;
+  margin-left: 138px;
+  margin-top: 34px;
 }
 
 .order-form p {
@@ -1055,12 +1074,28 @@ padding-left: 36px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
-
+.order-form__text {
+  cursor: pointer;
+}
 .order-form__item {
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.3);
+  padding-top: 26px;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+.order-form__item:first-child{
+  margin-left: 248px;
+}
+.order-form__item:nth-child(4){
+  padding-right: 6px;
+}
+
+.order-form__item input{
+  display: none;
 }
 
 .order-form__item--active {
@@ -1091,7 +1126,8 @@ padding-left: 36px;
   flex-wrap: wrap;
   justify-content: flex-start;
   width: 960px;
-
+  margin-top: 33px;
+  margin-left: 80px;
 }
 
 .search-results__item {
@@ -1133,50 +1169,60 @@ padding-left: 36px;
   width: 360px;
   height: 616px;
 }
+
+
 .search-results__figure--hover {
   background-color: #EFEFEF;
   display: none;
   position: absolute;
   bottom: 0px;
   width: 360px;
+  height: 231px;
 }
 
 .search-results__item:hover .search-results__figure--hover {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
+
 .search-results__item:hover path {
   fill: #4C4C4C;
-
 }
 
 .search-results__list {
   list-style: none;
 }
 
-.search-results__item figcaption h3 {
+.search-results__item h3 {
   font-size: 18px;
   line-height: 30px;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
+  color: #000000;
+  padding-top: 9px;
 }
 
-.search-results__item figcaption p {
+.search-results__item p {
   line-height: 18px;
   color: #666666;
   text-align: center;
+  width: 200px;
 }
 
 .search-result__btn {
   background-color: #fb565a;
   border: none;
-
+  width: 200px;
+  height: 50px;
   text-align: center;
   vertical-align: middle;
   line-height: 18px;
   color: #ffffff;
   text-transform: uppercase;
+  border-radius: 2px;
+  margin-top: 11px;
 }
 
 .search-result__btn:hover,
@@ -1199,36 +1245,52 @@ padding-left: 36px;
    ##     #######   ######    ######   ######## ########
    */
 
+
 .toggle__menu {
   list-style: none;
+  display: flex;
+  margin-left: 120px;
+  margin-top: 28px;
 }
-
-.toggle__menu-item a{
+.toggle__menu-item {
+  margin-right: 11px;
+}
+.toggle__menu-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #000000;
   background-color: #eeeeee;
-
   font-size: 16px;
   line-height: 18px;
-
+  font-weight: 500;
+  width: 50px;
+  height: 50px;
   text-transform: uppercase;
   line-height: 18px;
-
+  border-radius: 3px;
 }
 .toggle__menu-item--active a{
   background-color: #ffffff;
-  border: solid 3px #dbdbdb;
-
+  border: 3px solid #dbdbdb;
+  border-radius: 3px;
+  width: 44px;
+  height: 44px;
 }
 
-.toggle__menu-item a:hover,
-.toggle__menu-item a:focus{
+.toggle__menu-item--next a{
+  width: 260px;
+}
+
+.toggle__menu a:hover,
+.toggle__menu a:focus{
   background-color: #dfdfdf;
 }
-.toggle__menu-item a:active{
+
+.toggle__menu a:active{
 color: rgba(0, 0, 0, 0.3);
 box-shadow: inset 0px 3px 0 0 rgba(0, 1, 1, 0.1);
 background-color: #d5d5d5;
-border: solid 0px #dbdbdb;
 }
 
 /* Классы для сетки на флексах */

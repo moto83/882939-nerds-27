@@ -8,16 +8,13 @@
   <link href="css/normalize.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body class="inner-page">
   <!-- погнали сетку на флексах-->
   <header class="header">
     <div class="header__wrapper container">
-
       <a class="logo" href="index.html">
         <img src="img/nerds-logo.svg" width="160" height="65" alt="Логотип магазина готовых шаблонов нёрдс">
       </a>
-
       <nav class="navigation">
         <ul class="navigation__list">
           <li class="navigation__item"><a href="#">Студия</a></li>
@@ -25,9 +22,7 @@
           <li class="navigation__item navigation__item--active"><a href="catalog.html">Магазин</a></li>
           <li class="navigation__item"><a href="#">Контакты</a></li>
         </ul>
-
         <a class="cart" href="#">Корзина</a>
-
       </nav>
     </div>
     <h1>Магазин готовых шаблонов</h1>
@@ -36,134 +31,114 @@
     <!--Фильтр возьмём в один section, ниже ещё объединим сортировку и выведенные карточки-->
     <section class="filters container">
       <form class="filter" method="get" action="https://echo.htmlacademy.ru">
-
         <fieldset class="cost">
           <legend>Стоимость:</legend>
           <div class="range-filter">
-
             <div class="range-controls">
               <div class="scale">
                 <div class="bar" style="margin-left: 20%; width: 30%"></div>
               </div>
-
               <div class="toggle toggle-min"></div>
               <div class="toggle toggle-max"></div>
             </div>
-
             <div class="price-controls">
               <label class="min-price">от
                 <input name="min-price" type="number" value="0">
               </label>
-
               <label class="max-price">до
                 <input name="max-price" type="number" value="15000">
               </label>
             </div>
-
           </div>
         </fieldset>
-
         <fieldset class="grid">
           <legend>Сетка:</legend>
           <ul class="grid__list">
-
             <li class="grid__item">
               <input class="filter__radio" type="radio" name="grid" id="adaptive" checked>
               <label for="adaptive" class="filter__text">Адаптивная</label>
             </li>
-
             <li class="grid__item">
               <input class="filter__radio" type="radio" name="grid" id="fix">
               <label for="fix" class="filter__text">Фиксированная</label>
             </li>
-
             <li class="grid__item">
               <input class="filter__radio" type="radio" name="grid" id="rubber">
               <label for="rubber" class="filter__text">Резиновая</label>
             </li>
-
           </ul>
         </fieldset>
         <fieldset class="specials">
           <legend>Особенности:</legend>
           <ul class="specials__list">
-
             <li class="specials__item">
               <input class="filter__checkbox" type="checkbox" name="specials-check" id="slider" checked>
               <label for="slider" class="filter__text">Слайдер</label>
             </li>
-
             <li class="specials__item">
               <input class="filter__checkbox" type="checkbox" name="specials-check" id="advantage">
               <label for="advantage" class="filter__text">Блок преимуществ</label>
             </li>
-
             <li class="specials__item">
               <input class="filter__checkbox" type="checkbox" name="specials-check" id="news" checked>
               <label for="news" class="filter__text">Новости</label>
             </li>
-
             <li class="specials__item">
               <input class="filter__checkbox" type="checkbox" name="specials-check" id="gallery">
               <label for="gallery" class="filter__text">Галерея</label>
             </li>
-
             <li class="specials__item">
               <input class="filter__checkbox" type="checkbox" name="specials-check" id="cart">
               <label for="cart" class="filter__text">Корзина</label>
             </li>
-
           </ul>
         </fieldset>
         <button class="filter__button" type="submit" name="filter-button">Показать</button>
       </form>
       <!--Выводимое фильтром в другой section, здесь похоже надо переделать под radiobuttons-->
-      <!-- пока спрячу дополнительный фильтр
+      <div class="order-results">
       <section class="order">
         <h2 class="visually-hidden">Дополнительная сортировка результатов поиска</h2>
         <form class="order-form">
           <p class="order-form__text">Сортировать:</p>
           <ul class="order-form__list">
             <li class="order-form__item order-form__item--active">
-              <label class="order-form__text">
-                <input class="order-form__type" type="radio" name="order" checked>По цене
-              </label>
+                <input class="order-form__type" type="radio" name="order" id="order-cost" checked>
+                <label for="order-cost" class="order-form__text">По цене</label>
             </li>
             <li class="order-form__item">
-              <label class="order-form__text">
-                <input class="order-form__type" type="radio" name="order">По типу
-              </label>
+                <input class="order-form__type" type="radio" name="order" id="order-type">
+                <label for="order-type" class="order-form__text">По типу</label>
             </li>
             <li class="order-form__item">
-              <label class="order-form__text">
-                <input class="order-form__type" type="radio" name="order">По названию
-              </label>
+
+                <input class="order-form__type" type="radio" name="order" id="order-name">
+                <label for="order-name" class="order-form__text">По названию</label>
             </li>
-            <li class="search__item">
+            <li class="order-form__item">
               <button class="order-form__button--triangle">
                 <object type="image/svg+xml" data="icon-down-dir.svg">
-                  <img src="img/icon-down-dir.svg">
+                  <img src="img/icon-down-dir.svg" alt="Сортировать по убыванию">
                 </object>
               </button>
             </li>
-            <li class="search__item">
+            <li class="order-form__item">
               <button class="order-form__button--triangle">
-                <object type="image/svg+xml" data="icon-up-dir.svg">
-                  <img src="img/icon-up-dir.svg">
+                <object type="image/svg+xml" data="icon-up-dir.svg" >
+                  <img src="img/icon-up-dir.svg" alt="Сортировать по возрастанию">
                 </object>
               </button>
             </li>
           </ul>
         </form>
-      </section> !-->
-      <!--для отображения browser.png убрал alt, т.к. он не требуется, теперь думаю, что для картинок alt тоже можно скрыть, т.к. ниже идёт описание-->
-      <!--добавил figure для каждой карточки всунул туда же кнопку-->
+      </section>
+
       <section class="search-results container">
         <h2 class="visually-hidden">Результаты поиска</h2>
         <ul class="search-results__list">
           <li class="search-results__item">
             <a href="#">
-              <svg class="search-result__header xmlns=" http://www.w3.org/2000/svg" width="360" height="40"
+              <svg class="search-result__header" width="360" height="40"
                 viewBox="0 0 360 40">
                 <path fill="#EAEAEA"
                   d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
@@ -182,7 +157,7 @@
           </li>
           <li class="search-results__item">
             <a href="#">
-              <svg class="search-result__header xmlns=" http://www.w3.org/2000/svg" width="360" height="40">
+              <svg class="search-result__header" width="360" height="40">
                 <path fill="#EAEAEA"
                   d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
               </svg>
@@ -200,7 +175,7 @@
           </li>
           <li class="search-results__item">
             <a href="#">
-              <svg class="search-result__header xmlns=" http://www.w3.org/2000/svg" width="360" height="40"
+              <svg class="search-result__header" width="360" height="40"
                 viewBox="0 0 360 40">
                 <path fill="#EAEAEA"
                   d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
@@ -219,7 +194,7 @@
           </li>
           <li class="search-results__item">
             <a href="#">
-              <svg class="search-result__header xmlns=" http://www.w3.org/2000/svg" width="360" height="40"
+              <svg class="search-result__header" width="360" height="40"
                 viewBox="0 0 360 40">
                 <path fill="#EAEAEA"
                   d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
@@ -238,7 +213,7 @@
           </li>
           <li class="search-results__item">
             <a href="#">
-              <svg class="search-result__header xmlns=" http://www.w3.org/2000/svg" width="360" height="40"
+              <svg class="search-result__header" width="360" height="40"
                 viewBox="0 0 360 40">
                 <path fill="#EAEAEA"
                   d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
@@ -258,7 +233,7 @@
           </li>
           <li class="search-results__item">
             <a href="#">
-              <svg class="search-result__header xmlns=" http://www.w3.org/2000/svg" width="360" height="40"
+              <svg class="search-result__header" width="360" height="40"
                 viewBox="0 0 360 40">
                 <path fill="#EAEAEA"
                   d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
@@ -277,17 +252,19 @@
             </a>
           </li>
         </ul>
+
+        <div class="pagination">
+          <ul class="toggle__menu">
+            <li class="toggle__menu-item toggle__menu-item--active"><a href="#">1</a></li>
+            <li class="toggle__menu-item"><a href="#">2</a></li>
+            <li class="toggle__menu-item"><a href="#">3</a></li>
+            <li class="toggle__menu-item toggle__menu-item--next"><a href="#">Следующая</a></li>
+          </ul>
+        </div>
+      </div>
       </section>
     </section>
     <!--слайдер для пролистывания результатов, на самом деле ссылки-->
-    <div class="pagination">
-      <ul class="toggle__menu">
-        <li class="toggle__menu-item toggle__menu-item--active"><a href="#">1</a></li>
-        <li class="toggle__menu-item"><a href="#">2</a></li>
-        <li class="toggle__menu-item"><a href="#">3</a></li>
-        <li class="toggle__menu-item"><a href="#">Следующая</a></li>
-      </ul>
-    </div>
 
   </main>
   <footer>
@@ -295,7 +272,7 @@
       <h2 class="visually-hidden">Контактная информация</h2>
       <a href="#">
         <div class="contacts-map">
-          <img class="contacts-map__background" src="img/2.jpg" width="1440" height="416" alt="Изображение карты"></img>
+          <img class="contacts-map__background" src="img/2.jpg" width="1440" height="416" alt="Изображение карты">
           <img class="contacts-map__pin" src="img/map-marker-png.png" width="231" height="190"
             alt="Пин на карте с логотипом Нёрдс">
         </div>
@@ -336,7 +313,8 @@
       </div>
     </section>
   </footer>
- <!--  <section class="modal modal--feedback">
+ <!--
+   <section class="modal modal--feedback">
     <h2>Напишите нам</h2>
     <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
       <label class="feedback-form__title">Ваше имя:
@@ -351,8 +329,7 @@
       <button class="feedback-form__buttom" type="submit">Отправить</button>
     </form>
     <button class="feedback__close" type="button">Закрыть</button>
-    <!--в виде крестика-->
-  </section> -->
+  </section>
+-->
 </body>
-
 </html>
