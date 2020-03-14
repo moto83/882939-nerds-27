@@ -1385,6 +1385,8 @@ background-color: #d5d5d5;
 
 .modal-show {
   display: block;
+  animation-name: modal-up;
+  animation-duration: 0.4s;
 }
 
 .modal-feedback h2 {
@@ -1534,4 +1536,21 @@ cursor: pointer;
 .feedback-close:hover::before,
 .feedback-close:focus::before {
   opacity: 1;
+}
+
+/*Анимация для всплывающего окна---------------------------*/
+
+@keyframes modal-up{
+  0% {
+    transform: translateY(1000px);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+  90% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
