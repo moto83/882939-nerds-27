@@ -8,6 +8,7 @@
   <link href="css/normalize.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="inner-page">
   <!-- погнали сетку на флексах-->
   <header class="header">
@@ -30,13 +31,15 @@
   <main>
     <!--Фильтр возьмём в один section, ниже ещё объединим сортировку и выведенные карточки-->
     <section class="filters container">
+      <h2 class="visually-hidden">Фильтр цены</h2>
+
       <form class="filter" method="get" action="https://echo.htmlacademy.ru">
         <fieldset class="cost">
           <legend>Стоимость:</legend>
           <div class="range-filter">
             <div class="range-controls">
               <div class="scale">
-                <div class="bar" style="margin-left: 20%; width: 30%"></div>
+                <div class="bar"></div>
               </div>
               <div class="toggle toggle-min"></div>
               <div class="toggle toggle-max"></div>
@@ -97,172 +100,167 @@
       </form>
       <!--Выводимое фильтром в другой section, здесь похоже надо переделать под radiobuttons-->
       <div class="order-results">
-      <section class="order">
-        <h2 class="visually-hidden">Дополнительная сортировка результатов поиска</h2>
-        <form class="order-form">
-          <p class="order-form__text">Сортировать:</p>
-          <ul class="order-form__list">
-            <li class="order-form__item order-form__item--active">
-                <input class="order-form__type" type="radio" name="order" id="order-cost" checked>
-                <label for="order-cost" class="order-form__text">По цене</label>
-            </li>
-            <li class="order-form__item">
+        <section class="order">
+          <h2 class="visually-hidden">Дополнительная сортировка результатов поиска</h2>
+          <form class="order-form">
+            <p class="order-form__text">Сортировать:</p>
+            <ul class="order-form__list ">
+              <li class="order-form__item order-form__item--active ">
+                <input class="order-form__type " type="radio" name="order" id="order-cost" checked>
+                <label for="order-cost" class="order-form__text ">По цене</label>
+              </li>
+              <li class="order-form__item">
                 <input class="order-form__type" type="radio" name="order" id="order-type">
                 <label for="order-type" class="order-form__text">По типу</label>
-            </li>
-            <li class="order-form__item">
+              </li>
+              <li class="order-form__item">
 
                 <input class="order-form__type" type="radio" name="order" id="order-name">
                 <label for="order-name" class="order-form__text">По названию</label>
+              </li>
+              <li class="order-form__item">
+                <button class="order-form__button--triangle">
+                  <object type="image/svg+xml" data="icon-down-dir.svg">
+                    <img src="img/icon-down-dir.svg" alt="Сортировать по убыванию">
+                  </object>
+                </button>
+              </li>
+              <li class="order-form__item">
+                <button class="order-form__button--triangle">
+                  <object type="image/svg+xml" data="icon-up-dir.svg">
+                    <img src="img/icon-up-dir.svg" alt="Сортировать по возрастанию">
+                  </object>
+                </button>
+              </li>
+            </ul>
+          </form>
+        </section>
+
+        <section class="search-results container">
+          <h2 class="visually-hidden">Результаты поиска</h2>
+          <ul class="search-results__list">
+            <li class="search-results__item">
+              <a href="#">
+                <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
+                  <path fill="#EAEAEA"
+                    d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+                </svg>
+                <figure class="search-results__figure ">
+                  <img src="img/img-sedona-jpg.jpg" width="360" height="576" alt=" Информационный сайт Седона">
+                  <div class="search-results__figure--hover">
+                    <figcaption>
+                      <h3>Sedona</h3>
+                      <p>Информационный сайт для туристов</p>
+                    </figcaption>
+                    <button class="search-result__btn">9 900 руб.</button>
+                  </div>
+                </figure>
+              </a>
             </li>
-            <li class="order-form__item">
-              <button class="order-form__button--triangle">
-                <object type="image/svg+xml" data="icon-down-dir.svg">
-                  <img src="img/icon-down-dir.svg" alt="Сортировать по убыванию">
-                </object>
-              </button>
+            <li class="search-results__item">
+              <a href="#">
+                <svg class="search-result__header" width="360" height="40">
+                  <path fill="#EAEAEA"
+                    d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+                </svg>
+                <figure class="search-results__figure">
+                  <img src="img/img-pink-jpg.jpg" width="360" height="576" alt="Продуктовый лендинг Pink">
+                  <div class="search-results__figure--hover">
+                    <figcaption>
+                      <h3>Pink App</h3>
+                      <p>Продуктовый лендинг приложения для iOS и Android</p>
+                    </figcaption>
+                    <button class="search-result__btn">9 900 руб.</button>
+                  </div>
+                </figure>
+              </a>
             </li>
-            <li class="order-form__item">
-              <button class="order-form__button--triangle">
-                <object type="image/svg+xml" data="icon-up-dir.svg" >
-                  <img src="img/icon-up-dir.svg" alt="Сортировать по возрастанию">
-                </object>
-              </button>
+            <li class="search-results__item">
+              <a href="#">
+                <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
+                  <path fill="#EAEAEA"
+                    d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+                </svg>
+                <figure class="search-results__figure">
+                  <img src="img/img-barbershop-jpg.jpg" width="360" height="576" alt="Сайт салона красоты для мужчин">
+                  <div class="search-results__figure--hover">
+                    <figcaption>
+                      <h3>Barbershop</h3>
+                      <p>Сайт салона красоты. Для мужчин, да.</p>
+                    </figcaption>
+                    <button class="search-result__btn">9 900 руб.</button>
+                  </div>
+                </figure>
+              </a>
+            </li>
+            <li class="search-results__item">
+              <a href="#">
+                <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
+                  <path fill="#EAEAEA"
+                    d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+                </svg>
+                <figure class="search-results__figure">
+                  <img src="img/img-mishka-jpg.jpg" width="360" height="576" alt="Интернет-магазина MISHKA">
+                  <div class="search-results__figure--hover">
+                    <figcaption>
+                      <h3>MISHKA</h3>
+                      <p>Интернет-магазин вязаных игрушек</p>
+                    </figcaption>
+                    <button class="search-result__btn">9 900 руб.</button>
+                  </div>
+                </figure>
+              </a>
+            </li>
+            <li class="search-results__item">
+              <a href="#">
+                <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
+                  <path fill="#EAEAEA"
+                    d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+                </svg>
+                <figure class="search-results__figure">
+                  <img src="img/img-aplus-jpg.jpg" width="360" height="576"
+                    alt="Лендинг курсов повышения квалификации A Plus">
+                  <div class="search-results__figure--hover">
+                    <figcaption>
+                      <h3>A Plus</h3>
+                      <p>Лендинг курсов повышения квалификации</p>
+                    </figcaption>
+                    <button class="search-result__btn">9 900 руб.</button>
+                  </div>
+                </figure>
+              </a>
+            </li>
+            <li class="search-results__item">
+              <a href="#">
+                <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
+                  <path fill="#EAEAEA"
+                    d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+                </svg>
+                <figure class="search-results__figure">
+                  <img src="img/img-kvast-jpg.jpg" width="360" height="576"
+                    alt="Промо-сайт производителя крафтового кваса КВАСТ">
+                  <div class="search-results__figure--hover">
+                    <figcaption>
+                      <h3>КВАСТ</h3>
+                      <p>Промо-сайт производителя крафтового кваса</p>
+                    </figcaption>
+                    <button class="search-result__btn">9 900 руб.</button>
+                  </div>
+                </figure>
+              </a>
             </li>
           </ul>
-        </form>
-      </section>
 
-      <section class="search-results container">
-        <h2 class="visually-hidden">Результаты поиска</h2>
-        <ul class="search-results__list">
-          <li class="search-results__item">
-            <a href="#">
-              <svg class="search-result__header" width="360" height="40"
-                viewBox="0 0 360 40">
-                <path fill="#EAEAEA"
-                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
-              </svg>
-              <figure class="search-results__figure">
-                <img src="img/img-sedona-jpg.jpg" width="360" height="576" alt=" Информационный сайт Седона">
-                <div class="search-results__figure--hover">
-                  <figcaption>
-                    <h3>Sedona</h3>
-                    <p>Информационный сайт для туристов</p>
-                  </figcaption>
-                  <button class="search-result__btn">9 900 руб.</button>
-                </div>
-              </figure>
-            </a>
-          </li>
-          <li class="search-results__item">
-            <a href="#">
-              <svg class="search-result__header" width="360" height="40">
-                <path fill="#EAEAEA"
-                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
-              </svg>
-              <figure class="search-results__figure">
-                <img src="img/img-pink-jpg.jpg" width="360" height="576" alt="Продуктовый лендинг Pink">
-                <div class="search-results__figure--hover">
-                  <figcaption>
-                    <h3>Pink App</h3>
-                    <p>Продуктовый лендинг приложения для iOS и Android</p>
-                  </figcaption>
-                  <button class="search-result__btn">9 900 руб.</button>
-                </div>
-              </figure>
-            </a>
-          </li>
-          <li class="search-results__item">
-            <a href="#">
-              <svg class="search-result__header" width="360" height="40"
-                viewBox="0 0 360 40">
-                <path fill="#EAEAEA"
-                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
-              </svg>
-              <figure class="search-results__figure">
-                <img src="img/img-barbershop-jpg.jpg" width="360" height="576" alt="Сайт салона красоты для мужчин">
-                <div class="search-results__figure--hover">
-                  <figcaption>
-                    <h3>Barbershop</h3>
-                    <p>Сайт салона красоты. Для мужчин, да.</p>
-                  </figcaption>
-                  <button class="search-result__btn">9 900 руб.</button>
-                </div>
-              </figure>
-            </a>
-          </li>
-          <li class="search-results__item">
-            <a href="#">
-              <svg class="search-result__header" width="360" height="40"
-                viewBox="0 0 360 40">
-                <path fill="#EAEAEA"
-                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
-              </svg>
-              <figure class="search-results__figure">
-                <img src="img/img-mishka-jpg.jpg" width="360" height="576" alt="Интернет-магазина MISHKA">
-                <div class="search-results__figure--hover">
-                  <figcaption>
-                    <h3>MISHKA</h3>
-                    <p>Интернет-магазин вязаных игрушек</p>
-                  </figcaption>
-                  <button class="search-result__btn">9 900 руб.</button>
-                </div>
-              </figure>
-            </a>
-          </li>
-          <li class="search-results__item">
-            <a href="#">
-              <svg class="search-result__header" width="360" height="40"
-                viewBox="0 0 360 40">
-                <path fill="#EAEAEA"
-                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
-              </svg>
-              <figure class="search-results__figure">
-                <img src="img/img-aplus-jpg.jpg" width="360" height="576"
-                  alt="Лендинг курсов повышения квалификации A Plus">
-                <div class="search-results__figure--hover">
-                  <figcaption>
-                    <h3>A Plus</h3>
-                    <p>Лендинг курсов повышения квалификации</p>
-                  </figcaption>
-                  <button class="search-result__btn">9 900 руб.</button>
-                </div>
-              </figure>
-            </a>
-          </li>
-          <li class="search-results__item">
-            <a href="#">
-              <svg class="search-result__header" width="360" height="40"
-                viewBox="0 0 360 40">
-                <path fill="#EAEAEA"
-                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
-              </svg>
-              <figure class="search-results__figure">
-                <img src="img/img-kvast-jpg.jpg" width="360" height="576"
-                  alt="Промо-сайт производителя крафтового кваса КВАСТ">
-                <div class="search-results__figure--hover">
-                  <figcaption>
-                    <h3>КВАСТ</h3>
-                    <p>Промо-сайт производителя крафтового кваса</p>
-                  </figcaption>
-                  <button class="search-result__btn">9 900 руб.</button>
-                </div>
-              </figure>
-            </a>
-          </li>
-        </ul>
-
-        <div class="pagination">
-          <ul class="toggle__menu">
-            <li class="toggle__menu-item toggle__menu-item--active"><a href="#">1</a></li>
-            <li class="toggle__menu-item"><a href="#">2</a></li>
-            <li class="toggle__menu-item"><a href="#">3</a></li>
-            <li class="toggle__menu-item toggle__menu-item--next"><a href="#">Следующая</a></li>
-          </ul>
-        </div>
+          <div class="pagination">
+            <ul class="toggle__menu">
+              <li class="toggle__menu-item toggle__menu-item--active"><a href="#">1</a></li>
+              <li class="toggle__menu-item"><a href="#">2</a></li>
+              <li class="toggle__menu-item"><a href="#">3</a></li>
+              <li class="toggle__menu-item toggle__menu-item--next"><a href="#">Следующая</a></li>
+            </ul>
+          </div>
+        </section>
       </div>
-      </section>
     </section>
     <!--слайдер для пролистывания результатов, на самом деле ссылки-->
 
@@ -335,6 +333,8 @@
     <button class="feedback-form__buttom" type="submit">Отправить</button>
     <button class="feedback-close" type="button">Закрыть</button>
   </section>
+  <script src="js/script.js"></script>
+
 </body>
-<script src="js/script.js"></script>
+
 </html>
