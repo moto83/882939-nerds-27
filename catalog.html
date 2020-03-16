@@ -6,7 +6,7 @@
   <title>HTML Academy: Нёрдс</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
   <link href="css/normalize.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="css/minified.css" rel="stylesheet">
 </head>
 
 <body class="inner-page">
@@ -26,7 +26,7 @@
         <a class="cart" href="#">Корзина</a>
       </nav>
     </div>
-    <h1>Магазин готовых шаблонов</h1>
+    <h1 class="header-title">Магазин готовых шаблонов</h1>
   </header>
   <main>
     <!--Фильтр возьмём в один section, ниже ещё объединим сортировку и выведенные карточки-->
@@ -58,15 +58,15 @@
           <legend>Сетка:</legend>
           <ul class="grid__list">
             <li class="grid__item">
-              <input class="filter__radio" type="radio" name="grid" id="adaptive" checked>
+              <input class="visually-hidden filter__radio" type="radio" name="grid" value="adapt" id="adaptive" checked>
               <label for="adaptive" class="filter__text">Адаптивная</label>
             </li>
             <li class="grid__item">
-              <input class="filter__radio" type="radio" name="grid" id="fix">
+              <input class="visually-hidden filter__radio" type="radio" name="grid" value="f" id="fix">
               <label for="fix" class="filter__text">Фиксированная</label>
             </li>
             <li class="grid__item">
-              <input class="filter__radio" type="radio" name="grid" id="rubber">
+              <input class="visually-hidden filter__radio" type="radio" name="grid" value="rub" id="rubber">
               <label for="rubber" class="filter__text">Резиновая</label>
             </li>
           </ul>
@@ -75,23 +75,23 @@
           <legend>Особенности:</legend>
           <ul class="specials__list">
             <li class="specials__item">
-              <input class="filter__checkbox" type="checkbox" name="specials-check" id="slider" checked>
+              <input class="visually-hidden filter__checkbox" type="checkbox" name="specials-check" value="slide" id="slider" checked>
               <label for="slider" class="filter__text">Слайдер</label>
             </li>
             <li class="specials__item">
-              <input class="filter__checkbox" type="checkbox" name="specials-check" id="advantage">
+              <input class="visually-hidden filter__checkbox" type="checkbox" name="specials-check" value="adva" id="advantage">
               <label for="advantage" class="filter__text">Блок преимуществ</label>
             </li>
             <li class="specials__item">
-              <input class="filter__checkbox" type="checkbox" name="specials-check" id="news" checked>
+              <input class="visually-hidden filter__checkbox" type="checkbox" name="specials-check" value="new" id="news" checked>
               <label for="news" class="filter__text">Новости</label>
             </li>
             <li class="specials__item">
-              <input class="filter__checkbox" type="checkbox" name="specials-check" id="gallery">
+              <input class="visually-hidden filter__checkbox" type="checkbox" name="specials-check" value="gall" id="gallery">
               <label for="gallery" class="filter__text">Галерея</label>
             </li>
             <li class="specials__item">
-              <input class="filter__checkbox" type="checkbox" name="specials-check" id="cart">
+              <input class="visually-hidden filter__checkbox visually-hidden" type="checkbox" name="specials-check" value="car" id="cart">
               <label for="cart" class="filter__text">Корзина</label>
             </li>
           </ul>
@@ -105,149 +105,145 @@
           <form class="order-form">
             <p class="order-form__text">Сортировать:</p>
             <ul class="order-form__list ">
-              <li class="order-form__item order-form__item--active ">
-                <input class="order-form__type " type="radio" name="order" id="order-cost" checked>
+              <li class=" order-form__item">
+                <input class="visually-hidden " type="radio" name="order" value="co" id="order-cost" checked>
                 <label for="order-cost" class="order-form__text ">По цене</label>
               </li>
               <li class="order-form__item">
-                <input class="order-form__type" type="radio" name="order" id="order-type">
+                <input class="visually-hidden " type="radio" name="order" value="ty" id="order-type">
                 <label for="order-type" class="order-form__text">По типу</label>
               </li>
               <li class="order-form__item">
-
-                <input class="order-form__type" type="radio" name="order" id="order-name">
+                <input class="visually-hidden" type="radio" name="order" value="na" id="order-name">
                 <label for="order-name" class="order-form__text">По названию</label>
               </li>
               <li class="order-form__item">
-                <button class="order-form__button--triangle">
-                    <img src="img/icon-down-dir.svg" alt="Сортировать по убыванию">
+                <button class=" order-form__button--triangle">
+                  <img src="img/icon-down-dir.svg" width="11" height="10" alt="Сортировать по убыванию">
                 </button>
               </li>
               <li class="order-form__item">
                 <button class="order-form__button--triangle">
-                    <img src="img/icon-up-dir.svg" alt="Сортировать по возрастанию">
+                  <img src="img/icon-up-dir.svg" width="11" height="10" alt="Сортировать по возрастанию">
                 </button>
               </li>
             </ul>
           </form>
         </section>
-
         <section class="search-results">
           <h2 class="visually-hidden">Результаты поиска</h2>
           <ul class="search-results__list">
             <li class="search-results__item">
-                <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
-                  <path fill="#EAEAEA"
-                    d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
-                </svg>
-                <figure class="search-results__figure ">
-                  <a href="#">
-                    <img src="img/img-sedona-jpg.jpg" width="360" height="576" alt=" Информационный сайт Седона">
-                  </a>
-                  <figcaption>
-                    <div class="search-results__figure--hover">
+              <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
+                <path fill="#EAEAEA"
+                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+              </svg>
+              <figure class="search-results__figure ">
+                <img src="img/img-sedona-jpg.jpg" width="360" height="576" alt=" Информационный сайт Седона">
+                <figcaption>
+                  <div class="search-results__figure--hover">
+                    <a href="#">
                       <h3>Sedona</h3>
-                      <p>Информационный сайт для туристов</p>
-                      <button class="search-result__btn">9 900 руб.</button>
-                    </div>
-                  </figcaption>
-                </figure>
-            </li>
-            <li class="search-results__item">
-                <svg class="search-result__header" width="360" height="40">
-                  <path fill="#EAEAEA"
-                    d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
-                </svg>
-                <figure class="search-results__figure">
-                  <a href="#">
-                  <img src="img/img-pink-jpg.jpg" width="360" height="576"
-                  alt="Продуктовый лендинг Pink">
-                </a>
-                  <figcaption>
-                    <div class="search-results__figure--hover">
-                      <h3>Pink App</h3>
-                      <p>Продуктовый лендинг приложения для iOS и Android</p>
+                    </a>
+                    <p>Информационный сайт для туристов</p>
                     <button class="search-result__btn">9 900 руб.</button>
-                    </div>
-                  </figcaption>
-                </figure>
+                  </div>
+                </figcaption>
+              </figure>
             </li>
             <li class="search-results__item">
-                <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
-                  <path fill="#EAEAEA"
-                    d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
-                </svg>
-                <figure class="search-results__figure">
-                  <a href="#">
-                  <img src="img/img-barbershop-jpg.jpg" width="360" height="576" alt="Сайт салона красоты для мужчин">
-                </a>
-                  <figcaption >
-                    <div class="search-results__figure--hover">
+              <svg class="search-result__header" width="360" height="40">
+                <path fill="#EAEAEA"
+                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+              </svg>
+              <figure class="search-results__figure">
+                <img src="img/img-pink-jpg.jpg" width="360" height="576" alt="Продуктовый лендинг Pink">
+                <figcaption>
+                  <div class="search-results__figure--hover">
+                    <a href="#">
+                      <h3>Pink App</h3>
+                    </a>
+                    <p>Продуктовый лендинг приложения для iOS и Android</p>
+                    <button class="search-result__btn">9 900 руб.</button>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="search-results__item">
+              <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
+                <path fill="#EAEAEA"
+                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+              </svg>
+              <figure class="search-results__figure">
+                <img src="img/img-barbershop-jpg.jpg" width="360" height="576" alt="Сайт салона красоты для мужчин">
+                <figcaption>
+                  <div class="search-results__figure--hover">
+                    <a href="#">
                       <h3>Barbershop</h3>
-                      <p>Сайт салона красоты. Для мужчин, да.</p>
-                      <button class="search-result__btn">9 900 руб.</button>
-                    </div>
-                  </figcaption>
-                </figure>
+                    </a>
+                    <p>Сайт салона красоты. Для мужчин, да.</p>
+                    <button class="search-result__btn">9 900 руб.</button>
+                  </div>
+                </figcaption>
+              </figure>
             </li>
             <li class="search-results__item">
-                <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
-                  <path fill="#EAEAEA"
-                    d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
-                </svg>
-                <figure class="search-results__figure">
-                  <a href="#">
-                  <img src="img/img-mishka-jpg.jpg" width="360" height="576"
-                  alt="Интернет-магазина MISHKA">
-                </a>
-                  <figcaption>
-                    <div class="search-results__figure--hover">
+              <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
+                <path fill="#EAEAEA"
+                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+              </svg>
+              <figure class="search-results__figure">
+                <img src="img/img-mishka-jpg.jpg" width="360" height="576" alt="Интернет-магазина MISHKA">
+                <figcaption>
+                  <div class="search-results__figure--hover">
+                    <a href="#">
                       <h3>MISHKA</h3>
-                      <p>Интернет-магазин вязаных игрушек</p>
-                      <button class="search-result__btn">9 900 руб.</button>
-                    </div>
-                  </figcaption>
-                </figure>
+                    </a>
+                    <p>Интернет-магазин вязаных игрушек</p>
+                    <button class="search-result__btn">9 900 руб.</button>
+                  </div>
+                </figcaption>
+              </figure>
             </li>
             <li class="search-results__item">
-                <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
-                  <path fill="#EAEAEA"
-                    d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
-                </svg>
-                <figure class="search-results__figure">
-                  <a href="#">
-                  <img src="img/img-aplus-jpg.jpg" width="360" height="576"
-                    alt="Лендинг курсов повышения квалификации A Plus">
-                  </a>
-                  <figcaption >
-                    <div class="search-results__figure--hover">
+              <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
+                <path fill="#EAEAEA"
+                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+              </svg>
+              <figure class="search-results__figure">
+                <img src="img/img-aplus-jpg.jpg" width="360" height="576"
+                  alt="Лендинг курсов повышения квалификации A Plus">
+                <figcaption>
+                  <div class="search-results__figure--hover">
+                    <a href="#">
                       <h3>A Plus</h3>
-                      <p>Лендинг курсов повышения квалификации</p>
-                      <button class="search-result__btn">9 900 руб.</button>
-                    </div>
-                  </figcaption>
-                </figure>
+                    </a>
+                    <p>Лендинг курсов повышения квалификации</p>
+                    <button class="search-result__btn">9 900 руб.</button>
+                  </div>
+                </figcaption>
+              </figure>
             </li>
             <li class="search-results__item">
-                <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
-                  <path fill="#EAEAEA"
-                    d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
-                </svg>
-                <figure class="search-results__figure">
-                  <a href="#">
-                    <img src="img/img-kvast-jpg.jpg" width="360" height="576" alt="Промо-сайт производителя крафтового кваса КВАСТ">
-                  </a>
-                  <figcaption>
-                    <div class="search-results__figure--hover">
+              <svg class="search-result__header" width="360" height="40" viewBox="0 0 360 40">
+                <path fill="#EAEAEA"
+                  d="M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+              </svg>
+              <figure class="search-results__figure">
+                <img src="img/img-kvast-jpg.jpg" width="360" height="576"
+                  alt="Промо-сайт производителя крафтового кваса КВАСТ">
+                <figcaption>
+                  <div class="search-results__figure--hover">
+                    <a href="#">
                       <h3>КВАСТ</h3>
-                      <p>Промо-сайт производителя крафтового кваса</p>
-                      <button class="search-result__btn">9 900 руб.</button>
-                    </div>
-                  </figcaption>
-                </figure>
+                    </a>
+                    <p>Промо-сайт производителя крафтового кваса</p>
+                    <button class="search-result__btn">9 900 руб.</button>
+                  </div>
+                </figcaption>
+              </figure>
             </li>
           </ul>
-
           <div class="pagination">
             <ul class="toggle__menu">
               <li class="toggle__menu-item toggle__menu-item--active"><a href="#">1</a></li>
@@ -260,28 +256,27 @@
       </div>
     </section>
     <!--слайдер для пролистывания результатов, на самом деле ссылки-->
-
   </main>
   <footer>
     <section class="contacts">
       <h2 class="visually-hidden">Контактная информация</h2>
       <div class="contacts-map">
-      <img src="img/2.jpg" width="1440" height="416" alt="Изображение карты">
-      <img class="contacts-map__pin" src="img/map-marker-png.png" width="231" height="190"
-        alt="Пин на карте с логотипом Нёрдс">
-
-      <div class="contacts-info">
-        <p>
-          <span class="contacts-info__name">NЁRDS DESIGN STUDIO</span><br>
-          191186, Санкт-Петербург,<br>
-          ул. Б. Конюшенная, д. 19/8<br><br>
-          тел. +7 (812) 275-75-75
-        </p>
-        <button class="contacts-info__button" type="button">Напишите нам</button>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533277!2d30.320858716096975!3d59.93871648187614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1584376473663!5m2!1sru!2sru"
+          width="100%" height="416px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+          tabindex="0"></iframe>
+        <div class="contacts-info">
+          <p>
+            <span class="contacts-info__name">NЁRDS DESIGN STUDIO</span><br>
+            191186, Санкт-Петербург,<br>
+            ул. Б. Конюшенная, д. 19/8<br><br>
+            <a class="contacts-info__tel" href="tel:+78122757575">тел. +7 (812) 275-75-75</a>
+          </p>
+          <button class="contacts-info__button" type="button">Напишите нам</button>
+        </div>
       </div>
-    </div>
     </section>
-    <section class="social container">
+    <section class="social">
       <h2 class="visually-hidden">Соцсети</h2>
       <ul class="social__list">
         <li class="social__item">
@@ -328,7 +323,7 @@
     <button class="feedback-form__buttom" type="submit">Отправить</button>
     <button class="feedback-close" type="button">Закрыть</button>
   </section>
-  <script src="js/script.js"></script>
+  <script src="js/minifiedjs.js"></script>
 
 </body>
 
