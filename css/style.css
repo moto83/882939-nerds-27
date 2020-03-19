@@ -10,52 +10,50 @@
 body {
   margin: 0;
   padding: 0;
-
   font-family: 'Roboto', "Arial", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
   color: #000000;
-
   background-color: #ffffff;
 }
 
-.visually-hidden {
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
   position: absolute;
+
   width: 1px;
   height: 1px;
   margin: -1px;
   border: 0;
   padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
 
 /*cбрасываем стили таблицы*/
-.navigation ul,
+
 .slider ul,
 .advantage__wrapper ul,
 .about ul,
 .stats ul,
+.clients__list,
 .stats__list,
-.header__wrapper ul,
 .grid ul,
 .specials ul,
 .order-form ul,
 .search-results ul,
 .pagination ul,
-.toggle__menu{
+.toggle__menu {
+  list-style: none;
   list-style-type: none;
   margin: 0;
-  padding-inline-start: 0; /* вот этот параметр оссобенно настораживает*/
-}
-
-/*класс для работы с флексами, главное не забыть про вот этот паддинг по бокам*/
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
+  padding: 0;
 }
 
 
@@ -84,15 +82,15 @@ a {
 */
 
 .header {
-  width: 100%;
+  min-width: 1160px;
   min-height: 123px;
-  background: #eeeeee;
+  background-color: #eeeeee;
 }
 
 .header__wrapper {
   display: flex;
-  min-width: 1200px;
-
+  justify-content: center;
+  min-width: 1160px;
   font-weight: 500;
   text-transform: uppercase;
   line-height: 30px;
@@ -111,19 +109,17 @@ a {
 
 .navigation {
   display: flex;
-  padding-left: 202px;
-
+  padding-left: 100px;
 }
 
 .navigation__list {
   list-style: none;
-  position: relative;
   display: flex;
-  width: 438px;
   justify-content: space-between;
+  width: 438px;
   padding-top: 75px;
   margin: 0;
-  padding-inline-start: 0;
+  position: relative;
 }
 
 .navigation__list a,
@@ -150,7 +146,6 @@ a {
   background-color: #fb565a;
 }
 /*Регение выше отвратительное, т.к. не сработает для остальных ссылок, для каждой нужно будет сделать такое, но обычным border-bottom у меня не получилось*/
-
 
 .cart {
   position: relative;
@@ -187,15 +182,19 @@ a {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  background-color: #eeeeee;
+  min-width: 1160px;
 
+  background-color: #eeeeee;
   min-height: 413px;
 }
+
 .slider-wrapper {
   position: relative;
-
+  display: flex;
+  width: 1160px;
 }
-.slider-gallegy {
+
+.slider-gallery {
   list-style: none;
   display: flex;
 }
@@ -231,7 +230,6 @@ a {
 .slider__item--left {
   display: flex;
   flex-direction: row;
-  margin-left: 20px;
 }
 
 .slider__item--left h3 {
@@ -314,13 +312,10 @@ a {
 }
 
 .advantage__wrapper {
-  width: 1200px;
+  width: 1160px;
   display: flex;
   flex-direction: row;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 0 auto;
 }
 
 .advantage__list {
@@ -428,22 +423,18 @@ a {
 
 .about-stats {
   display: flex;
-  flex-basis: 1200px;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1160px;
 }
 
-.about-stats::after{
-  content: "";
-  width: 1200px;
-  height: 2px;
-  background-color: #efefef;
-  margin-bottom: 143px;
-}
+
 
 .about h3 {
   font-size: 45px;
   line-height: 45px;
   font-weight: 500;
-  width: 650px;
+  min-width: 650px;
   margin-block-start: 34px;
   margin-block-end: 34px;
 }
@@ -451,6 +442,7 @@ a {
 
 .about p {
   color: #283136;
+  max-width: 616px;
 }
 
 .about__title {
@@ -509,8 +501,7 @@ a {
 
 
 .about {
-  flex-basis: 650px;
-  margin-right: 129px;
+  max-width: 960px;
 }
 
 .stats__list {
@@ -539,6 +530,9 @@ a {
   padding-left: 18px;
 }
 
+.stats {
+  padding-left: 120px
+}
 /*
 ########  #### ##     ## #### ########  ######## ########
 ##     ##  ##  ##     ##  ##  ##     ## ##       ##     ##
@@ -549,6 +543,9 @@ a {
 ########  ####    ###    #### ########  ######## ##     ##
 */
 .big-divider {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
   width: 1160px;
   height: 2px;
   background-color: #efefef;
@@ -556,6 +553,9 @@ a {
   margin-bottom: 40px;
 }
 .big-divider2 {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
   width: 1160px;
   height: 2px;
   background-color: #efefef;
@@ -571,24 +571,29 @@ a {
 ##    ## ##        ##  ##       ##   ###    ##    ##    ##
  ######  ######## #### ######## ##    ##    ##     ######
  */
+
 .clients__list {
   position: relative;
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 1160px;
+  margin: 0 auto;
 }
 
 .clients__list::after{
   content: "";
-  width: 1200px;
+  width: 1160px;
   height: 2px;
   background-color: #efefef;
   margin-top: 43px;
+  margin-left: auto ;
+  margin-right: auto;
 }
+
 .small-divider{
   position: relative;
-
   width: 2px;
   height: 52px;
   background-color: #EFEFEF;
@@ -601,9 +606,11 @@ a {
 .small-divider__borod {
   right: 25px;
 }
+
 .small-divider__pink {
   right: 41px;
 }
+
 .clients__item:last-child:after {
   background-color:transparent;
 }
@@ -666,8 +673,8 @@ a {
 .contacts-map {
   min-width: 100%;
   margin: auto;
-  background-image: url(/img/2.jpg);
-  width: 1180px;
+  background-image: url(../img/2.jpg);
+  width: 1160px;
   height: 413px;
   background-position: center;
   background-repeat: no-repeat;
@@ -716,16 +723,16 @@ a {
   border: none;
   border-radius: 2px;
   width: 219px;
-  height: 50px;
 
   padding: 8px 16px;
   margin-top: 36px;
 
   text-align: center;
-  vertical-align: middle;
   line-height: 18px;
   color: #ffffff;
   text-transform: uppercase;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .contacts-info__button:hover,
@@ -768,7 +775,7 @@ a {
 
  .social {
   display: flex;
-  max-width: 1180px;
+  max-width: 1160px;
   margin: 0 auto;
   justify-content: center;
 }
@@ -903,6 +910,9 @@ a {
 
 .filters {
   display: flex;
+  justify-content: center;
+  min-width: 1160px;
+  margin: 0 auto;
 }
 
 .filters fieldset {
@@ -942,7 +952,7 @@ a {
 
 .range-filter {
   width: 260px;
-  margin-top: 49px;
+  margin-top: 34px;
 }
 
 .range-controls {
@@ -1024,215 +1034,176 @@ a {
   text-align: right;
 }
 
-/*Фильтр с радиокнопками ---------------------------------------------------------*/
 
-.grid {
-  padding: 0px;
-  margin: 0px;
+
+.filters {
+  width: 260px;
 }
 
-.grid legend {
+.filter fieldset {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 51px;
+
+  border: none;
+}
+
+.filter fieldset:first-child {
+  margin-bottom: 35px;
+}
+
+.filter legend {
   font-weight: 700;
   font-size: 18px;
   line-height: 30px;
   text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
-.grid__list{
+.filter ul {
+  padding: 0;
+  margin: 0;
+
   list-style: none;
+  line-height: 20px;
 }
 
-.grid__item {
-  position: relative;
-  margin-top: 14px;
-  margin-bottom: 16px;
-  padding-left: 36px;
+.filter-option {
+  margin-bottom: 21px;
+  padding-left: 35px;
 }
 
-.grid__item .filter__text {
+.filter-option label {
   position: relative;
+
   display: block;
+
   cursor: pointer;
   user-select: none;
 }
 
-.grid__item label::before {
-  content: "";
-  position: absolute;
-  left: -36px;
-  top:-1px;
-  width: 18px;
-  height: 18px;
-  border: 4px solid #b9b9b9;
-  border-radius: 50%;
-}
-
-.grid__item:hover label::before,
-.grid__item:focus label::before{
-  content: "";
-  position: absolute;
-  left: -36px;
-  top:-1px;
-  width: 18px;
-  height: 18px;
-  border: 4px solid #4d4d4d;
-  border-radius: 50%;
-}
-
-.filter__radio{
-background-color: #ffffff;
-}
-
-.filter__radio:checked + label::after {
-  content: "";
-  position: absolute;
-  left: -28px;
-  top: 7px;
-  width: 2px;
-  height: 2px;
-  border: 4px solid #b9b9b9;
-  background-color: #b9b9b9;
-  border-radius: 50%;
-}
-
-.filter__radio:checked + label:hover::after {
-  content: "";
-  position: absolute;
-  left: -28px;
-  top: 7px;
-  width: 2px;
-  height: 2px;
-  border: 4px solid #4d4d4d;
-  background-color: #4d4d4d;
-  border-radius: 50%;
-}
-
-
-.grid__item:hover label:checked::after,
-.grid__item:focus label:checked::after{
-  content: "";
-  position: absolute;
-  left: -28px;
-  top: 7px;
-  width: 2px;
-  height: 2px;
-  border: 4px solid #283136;
-  background-color: #283136;
-  border-radius: 50%;
-}
-
-.grid__item label:hover::after,
-.grid__item label:focus::after{
-  opacity: 1;
-}
-
-.filter__text:hover .filter__checkbox,
-.filter__text:focus .filter__checkbox{
+.filter-input:hover + label,
+.filter-input:focus + label {
   color: #283136;
-  border: 1px solid black;
 }
 
-/*Фильтр с чекбоксами -----------------------------------------*/
-
-.specials legend {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 30px;
-  text-transform: uppercase;
+.filter-input:disabled + label,
+.filter-input:disabled + label {
+  color: rgba(40, 49, 54, 0.3);
 }
 
-.specials__list {
-  list-style: none;
-}
-
-.specials__item{
-  position: relative;
-  margin-top: 14px;
-  margin-bottom: 16px;
-  padding-left: 36px;
-}
-
-.filter__checkbox {
-  background-color: #ffffff;
-}
-
-.specials .filter__text {
-  position: relative;
-  display: block;
-  cursor: pointer;
-  user-select: none;
-}
-
-.specials label::before {
-  content: url(../img/checkbox-off.svg);
+.filter-input-checkbox + label::before {
+  content: "";
   position: absolute;
   left: -34px;
-  top: 0px;
-  width: 18px;
-  height: 18px;
+  top: 0;
+
+  width: 23px;
+  height: 23px;
+
+  background-image: url("../img/checkbox-off.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
   opacity: 0.4;
 }
 
-.specials__item:hover label::before,
-.specials__item:focus label::before{
-  content: url(../img/checkbox-off.svg);
-  position: absolute;
-  left: -34px;
-  top: 0px;
-  width: 18px;
-  height: 18px;
-  opacity: 1;
-}
+.filter-input-checkbox:checked + label::before {
+  content: "";
 
-.filter__checkbox:checked + label::before {
-  content: url(../img/checkbox-on.svg);
   position: absolute;
-  left: -34px;
   top: 0px;
-  width: 18px;
-  height: 18px;
+  left: -34px;
+
+  width: 26px;
+  height: 23px;
+
+  background-image: url("../img/checkbox-on.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
   opacity: 0.4;
 }
-.specials__item:hover .filter__checkbox:checked + label::before,
-.specials__item:focus .filter__checkbox:checked + label::before{
-  content: url(../img/checkbox-on.svg);
-  position: absolute;
-  left: -34px;
-  top: 0px;
-  width: 18px;
-  height: 18px;
+
+
+.filter-input-checkbox:hover:checked + label::before,
+.filter-input-checkbox:focus:checked + label::before,
+.filter-input-checkbox:hover + label::before,
+.filter-input-checkbox:focus + label::before {
   opacity: 1;
 }
 
+.filter-input-radio + label::before {
+  content: "";
+
+  position: absolute;
+  left: -34px;
+  top: -1px;
+
+  width: 25px;
+  height: 25px;
+
+  background-image: url("../img/radio-off.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  opacity: 0.4;
+}
+.filter-input:disabled + label {
+  color: #000000;
+
+  opacity: 0.5;
+}
+
+.filter-input-radio:checked + label::before {
+  content: "";
+
+  position: absolute;
+  top: -1px;
+  left: -34px;
+
+  width: 25px;
+  height: 25px;
+
+  background-image: url("../img/radio-on.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  opacity: 0.4;
+}
+
+
+.filter-input-radio:hover:checked + label::before,
+.filter-input-radio:focus:checked + label::before,
+.filter-input-radio:hover + label::before,
+.filter-input-radio:focus + label::before {
+  opacity: 1;
+}
 
 /*Кнопка показать ------------------------------------------------------*/
-.filter__button {
-  background-color: #eeeeee;
-  border: none;
+.filter-button {
   font-size: 16px;
   font-weight: 500;
+  text-transform: uppercase;
   text-align: center;
-  vertical-align: middle;
-  width: 260px;
-  height: 50px;
   line-height: 18px;
   color: #000000;
-  text-transform: uppercase;
-  outline: none;
 
+  width: 260px;
+  height: 50px;
+  background-color: #eeeeee;
+  border: none;
+  outline: none;
 }
 
-.filter__button:hover,
-.filter__button:focus {
+.filter-button:hover,
+.filter-button:focus {
   background-color: #dfdfdf;
 }
 
-.filter__button:active {
+.filter-button:active {
+  color: rgba(0, 0, 0, 0.3);
+
   box-shadow: inset 0px 3px 0 0 rgba(0, 1, 1, 0.1);
   background-color: #d5d5d5;
-
-  color: rgba(0, 0, 0, 0.3);
 }
+
 
 /*Фильтр для группировки результатов --------------------------*/
 
@@ -1316,6 +1287,9 @@ input:checked + .order-form__text{
 ##    ## ##       ##     ## ##    ##  ##    ## ##     ##
  ######  ######## ##     ## ##     ##  ######  ##     ##
   */
+
+
+
 .order-results {
   padding: 0px;
   margin: 0px;
@@ -1325,7 +1299,7 @@ input:checked + .order-form__text{
 .search-results {
   display: flex;
   flex-wrap: wrap;
-  width: 960px;
+  max-width: 960px;
 }
 
 .search-results__list {
@@ -1405,6 +1379,7 @@ cursor: pointer;
   list-style: none;
   margin: 0px;
   padding: 0px;
+  width: 800px;
 }
 
 .search-results__item h3 {
@@ -1459,6 +1434,10 @@ cursor: pointer;
     opacity: 1;
   }
 }
+
+
+
+
 
 /*
 ########  #######   ######    ######   ##       ########
