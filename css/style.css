@@ -232,10 +232,11 @@ a {
 
 .slider__item img {
   position: relative;
+  right: 83px;
+  top: 9px;
 
   display: block;
   width: 100%;
-  right: 83px;
 }
 
 
@@ -282,8 +283,8 @@ a {
 
 .slider-switch {
   position: absolute;
-  top: 259px;
-  left: 580px;
+  top: 255px;
+  left: 555px;
   transform: rotate(-90deg);
 
   list-style: none;
